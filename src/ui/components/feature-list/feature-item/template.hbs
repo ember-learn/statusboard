@@ -1,0 +1,27 @@
+<div>
+    <img src="{{feature.icon}}">
+    <h3 onclick={{action toggle}}>{{feature.name}}</h3>
+    <p>{{feature.description}}</p>
+    <p>{{feature.status}}</p>
+    <div class="{{stateClass}}">
+        <p>{{feature.availability}}</p>
+        <div>
+        {{#if feature.resources}}
+            <p>Resources</p>
+            <ul>
+            {{#each feature.resources key="@index" as |resource|}}
+                <li><span class="icon-{{resource.type}}"></span><a href="{{resource.url}}">{{resource.name}}</a></li>
+            {{/each}}
+            </ul>
+        {{/if}}
+        {{#if feature.champions}}
+            <p>Core Team Champions</p>
+            <ul>
+            {{#each feature.champions key="@index" as |champion|}}
+                <li><a href="{{champion.url}}"><img src="{{champion.image}}"> {{champion.name}}</a></li>
+            {{/each}}
+            </ul>
+        {{/if}}
+        </div>
+    </div>
+</div>
