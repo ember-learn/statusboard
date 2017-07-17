@@ -22,5 +22,6 @@ deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
+  local_dir: ./tmp/deploy-dist
   on:
     branch: master
