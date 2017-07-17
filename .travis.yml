@@ -15,7 +15,7 @@ install:
 
 script:
   - echo "We're waiting on glimmer to have tests, until then we'll keep deploying on pushes"
-  - npx ember deploy production --activate --verbose
+  - ./node_modules/.bin/ember deploy production --activate --verbose
   # - yarn test
 
 deploy:
