@@ -1,0 +1,26 @@
+language: node_js
+node_js:
+  - "8"
+dist: trusty
+sudo: false
+
+addons:
+  chrome: stable
+
+cache:
+  yarn: true
+
+install:
+  - yarn install
+
+script:
+  - echo "We're waiting on glimmer to have tests, until then we'll keep deploying on pushes"
+  - npx ember deploy production --activate --verbose
+  # - yarn test
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  on:
+    branch: master
