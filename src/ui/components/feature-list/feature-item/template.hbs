@@ -1,13 +1,22 @@
-<div>
-    <img src="{{feature.icon}}">
-    <h3 onclick={{action toggle}}>{{feature.name}}</h3>
-    <p>{{feature.description}}</p>
-    <p>{{feature.status}}</p>
-    <div class="{{stateClass}}">
-        <p>{{feature.availability}}</p>
+<div class="Feature">
+    <div class="Feature-Head">
+        <img class="Feature-Icon" src="{{feature.icon}}">
+        <div class="Feature-Heading">
+            <h3 onclick={{action toggle}}>{{feature.name}}</h3>
+            <p class="Feature-Status">{{feature.status}}</p>
+        </div>
+    </div>
+    <div class="Feature-Description">
+        <p>{{feature.description}}</p>
+    </div>
+    <div class="Feature-Detail {{stateClass}}">
+        <div class="Feature-Availability">
+            <h4>Availability</h4>
+            <p>{{feature.availability}}</p>
+        </div>
         <div>
         {{#if feature.resources}}
-            <p>Resources</p>
+            <h4>Resources</h4>
             <ul>
             {{#each feature.resources key="@index" as |resource|}}
                 <li><span class="icon-{{resource.type}}"></span><a href="{{resource.url}}">{{resource.name}}</a></li>
@@ -15,7 +24,7 @@
             </ul>
         {{/if}}
         {{#if feature.champions}}
-            <p>Core Team Champions</p>
+            <h4>Core Team Champions</h4>
             <ul>
             {{#each feature.champions key="@index" as |champion|}}
                 <li><a href="{{champion.url}}"><img src="{{champion.image}}"> {{champion.name}}</a></li>
