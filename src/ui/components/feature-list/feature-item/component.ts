@@ -1,23 +1,23 @@
 import Component, { tracked } from '@glimmer/component';
 
 export default class FeatureItem extends Component {
-    @tracked isOpen = false;
+    // @tracked isOpen = true;
 
     @tracked('@feature')
     get feature() {
         return this.args.feature;
     }
 
-    @tracked('isOpen')
-    get stateClass() {
-        if(!this.isOpen) {
-            return 'u-hidden';
-        }
+    // @tracked('isOpen')
+    // get stateClass() {
+    //     if(!this.isOpen) {
+    //         return 'u-hidden';
+    //     }
 
-        return '';
-    }
+    //     return '';
+    // }
 
-    toggle() {
-        this.isOpen = !this.isOpen;
-    }
+    // toggle() {
+    //     this.isOpen = !this.isOpen;
+    // }
 };
