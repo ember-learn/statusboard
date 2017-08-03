@@ -1,7 +1,28 @@
 /* Colors */
 $orange-color: #E1563F;
-$blue-color: #3c64b6;
+$lighest-of-yellows-color: #FFFDF9;
+$second-lighest-of-yellows-color: #F8E7CF;
+$red-color: #c13c27;
+$dull-red-color: #dd6a58;
+$brown-orange-color: #ab5d27;
+$brown-color: #865931;
+// $blue-color: #3c64b6; @check: why is status blue different from regular blue?
 $black-color: #252525;
+
+$green-color: #579e4a;
+$light-green-color: #d4fea8;
+$blue-color: #2683ab;
+$light-blue-color: #cbebfe;
+$dirty-yellow-color: #a28b5b;
+$light-yellow-color: #fff8ae;
+
+/* Status colours */
+$shipped-color: $green-color;
+$shipped-highlight-color: $light-green-color;
+$in-development-color: $blue-color;
+$in-development-highlight-color: $light-blue-color;
+$under-consideration-color: $dirty-yellow-color;
+$under-consideration-highlight-color: $light-yellow-color;
 
 /* Screen sizes */
 $screen-sm-min: 768px;
@@ -9,87 +30,225 @@ $screen-md-min: 992px;
 $screen-lg-min: 1200px;
 
 $icon-height: 60px;
+$right-hand-column-width-percent: 30%;
+
+$side-padding: 1rem;
 
 // -- site.css.scss
 body {
   background-color: white;
   font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1rem;
   line-height: 1.5;
-  color: #444444;
+  color: #444;
   -webkit-font-smoothing: antialiased;
+  padding: o;
+  margin: 0;
+}
+
+a {
+    color: $dull-red-color;
+    transition: color 0.1s linear;
+}
+
+a:active {
+    outline: none;
+}
+
+a:active, a:focus, a:hover {
+    color: $red-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1rem;
+  line-height: 1.2;
+  margin: 0 0 0.75em;
+  font-weight: bold;
+}
+
+h1 {
+  color: $dull-red-color;
+  font-size: 2em;
+}
+
+h2 {
+  color: $brown-color;
+  font-size: 1.66667em; // @magic: should be calculation
 }
 
 h3 {
   margin: 0 0 1em;
-  font-size: 1.5em;
-}
-
-h4 {
-  color: $orange-color;
-  margin: 0 0 1em;
+  font-size: 1.38889em; // @magic: should be calculation
 }
 
 ul, p {
   margin: 0 0 1em;
 }
 
+.Roadmap-Intro {
+  padding: 0 $side-padding;
+  margin: 2em 0;
+}
+
+.Features {
+  margin: 2em 0;
+  background: $lighest-of-yellows-color;
+  border-top: 1px solid $second-lighest-of-yellows-color;
+}
+
 .Feature {
-  margin: 0 0 2em;
+  padding: 2em $side-padding;
+  display: block;
+
+  &:nth-child(2n) {
+    background: white;
+  }
+}
+
+.Feature-Inner {
+  width: 100%;
 }
 
 .Feature-Head {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
   margin-bottom: 1em;
 }
 
 .Feature-Icon {
   width: $icon-height;
   height: $icon-height;
+  display: block;
+  float: left;
+  margin: 0 1em 0 0;
 }
 
 .Feature-Heading {
-  height: $icon-height;
-  margin-left: 1em;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  
-  h3 {
-    line-height: 1em;
-    margin: 0;
-  }
+  line-height: 1em;
+  margin-bottom: 0.5em;
 }
+
 
 .Feature-Status {
   margin: 0;
   line-height: 1em;
+  font-weight: bold;
+  font-size: 1.2em;
+
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+
+  &:before {
+    content: '';
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 1em;
+    height: 1em;
+    margin-right: 0.5em;
+    display: inline-block;
+  }
+}
+
+// @dry: Figure out how to use a mixin here
+.status--shipped {
+  color: $shipped-color;
+
+  &:before {
+    background: $shipped-highlight-color;
+    border-color: $shipped-color;
+  }
+}
+
+.status--in-development {
+  color: $in-development-color;
+
+  &:before {
+    background: $in-development-highlight-color;
+    border-color: $in-development-color;
+  }
+}
+
+.status--under-consideration {
+  color: $under-consideration-color;
+
+  &:before {
+    background: $under-consideration-highlight-color;
+    border-color: $under-consideration-color;
+  }
+}
+
+.Feature-Status, .Feature-Description {
+  margin-top: 0.5em;
 }
 
 .Feature-Detail {
-  h4 {
-    margin: 0;
+  margin-top: 2em;
+
+  h3 {
+    margin: 0 0 0.5em;
+    font-size: 1.2em;
+    color: $brown-orange-color;
+  }
+}
+
+.Feature-ResourcesList {
+  padding: 0;
+  list-style: none;
+}
+
+.Feature-Champions {
+  padding: 0;
+  list-style: none;
+}
+
+.Feature-Champion {
+  margin-bottom: 0.25em;
+
+  a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  img {
+    border-radius: 50%;
+    margin-right: 7px;
   }
 }
 
 @media(min-width: $screen-sm-min) {
-  .Feature-Heading {
+  .Feature {
     display: flex;
-    flex-direction: row;
-    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  
+  .Feature-Inner {
+    margin-left: 1em;
   }
 
-  .Feature-Status {
-    width: 30%
+
+  .Feature-Icon {
+    float: none;
+    margin: 0;
   }
 
-  .Feature-Description {
-    width: 70%;
+  .Feature-HeadContent, .Feature-Detail {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
   }
 
-  .Feature-Availability {
-    float: right;
+  .Feature-Description, .Feature-DetailContent {
+    width: calc(#{100 - $right-hand-column-width-percent} - 60px);
+  }
+
+  .Feature-Status, .Feature-Availability {
+    width: $right-hand-column-width-percent;
+  }
+
+  .Feature-Status, .Feature-Description {
+    margin-top: 0;
   }
 }
 
