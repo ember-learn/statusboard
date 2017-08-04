@@ -1,4 +1,4 @@
-# roadmap-page
+# roadmap-page [![Build Status](https://www.travis-ci.org/ember-learn/roadmap-page.svg?branch=master)](https://www.travis-ci.org/ember-learn/roadmap-page)
 
 This README outlines the details of collaborating on this Glimmer application.
 A short introduction of this app could easily go here.
