@@ -5,10 +5,17 @@ const json = require('broccoli-json-module');
 const Funnel = require('broccoli-funnel');
 const Rollup = require('broccoli-rollup');
 const merge = require('broccoli-merge-trees');
+const resolve = require('rollup-plugin-node-resolve');
+const commonjs = require('rollup-plugin-commonjs');
 
 module.exports = function(defaults) {
   let app = new GlimmerApp(defaults, {
-    // Add options here
+    rollup: {
+      plugins: [
+        resolve({ jsnext: true, module: true, main: true }),
+        commonjs()
+      ]
+    }
   });
 
   // Use `app.import` to add additional libraries to the generated
