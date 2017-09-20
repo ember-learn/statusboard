@@ -247,16 +247,21 @@ p {
 }
 
 .Feature-Champion {
-    margin-bottom: 0.25em;
-    a {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
-    img {
-        border-radius: 50%;
-        margin-right: 7px;
-    }
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 0.25em;
+
+  a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  img {
+    border-radius: 50%;
+    margin-right: 7px;
+    width: 100px;
+  }
 }
 
 @media(min-width: $screen-sm-min) { 

@@ -1,12 +1,12 @@
 <div class="Feature">
-    <img class="Feature-Icon" src="{{feature.icon}}">
+    {{!-- <img class="Feature-Icon" src="{{feature.icon}}"> --}}
     <div class="Feature-Inner">
         <div class="Feature-Head">
             <h2 class="Feature-Heading"><button id="{{feature.id}}" aria-controls="{{feature.descriptionId}}" aria-expanded="false">{{feature.name}}</button></h2>
             <div class="Feature-HeadContent">
                 <p class="Feature-Status status--{{feature.status}}">{{feature.statusText}}</p>
                 <div class="Feature-Description" id="{{feature.descriptionId}}" aria-labelledby="{{feature.id}}">
-                    <p>{{feature.description}}</p>
+                    <p>{{{md feature.description}}}</p>
                 </div>
             </div>
         </div>
