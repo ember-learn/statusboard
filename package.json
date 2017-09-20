@@ -21,6 +21,7 @@
     "ember-cli": "github:ember-cli/ember-cli",
     "ember-cli-deploy": "^1.0.1",
     "ember-cli-deploy-build": "^1.1.0",
+    "ember-cli-google-fonts": "^2.14.1",
     "ember-cli-inject-live-reload": "^1.6.1",
     "ember-cli-sass": "^6.2.0",
     "ember-cli-uglify": "^1.2.0",
@@ -29,5 +30,8 @@
   "engines": {
     "node": ">= 4.0"
   },
-  "private": true
+  "private": true,
+  "dependencies": {
+    "yarn": "^1.0.2"
+  }
 }
