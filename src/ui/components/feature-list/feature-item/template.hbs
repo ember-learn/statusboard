@@ -6,7 +6,7 @@
             <div class="Feature-HeadContent">
                 <p class="Feature-Status status--{{feature.status}}">{{feature.statusText}}</p>
                 <div class="Feature-Description" id="{{feature.descriptionId}}" aria-labelledby="{{feature.id}}">
-                    <p>{{{md feature.description}}}</p>
+                    <mark-down @text={{feature.description}}></mark-down>
                 </div>
             </div>
         </div>

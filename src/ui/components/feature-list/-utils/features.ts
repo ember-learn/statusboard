@@ -38,7 +38,7 @@ as well as a new modules API.
 
 Now, instead of doing the following when creating a controller:
 
-\`\`\`
+\`\`\`typescript
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
@@ -47,7 +47,7 @@ export default Ember.Controller.extend({
 
 You will be able to do:
 
-\`\`\`
+\`\`\`typescript
 import Controller from '@ember/controller';
 
 export default Controller.extend({

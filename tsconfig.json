@@ -5,11 +5,11 @@
     "inlineSourceMap": true,
     "inlineSources": true,
     "moduleResolution": "node",
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "types": [
+      "qunit"
+    ]
   },
-  "include": [
-    "src/**/*.ts"
-  ],
   "exclude": [
     "node_modules",
     "tmp",
