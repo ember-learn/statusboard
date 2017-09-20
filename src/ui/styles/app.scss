@@ -1,14 +1,16 @@
 /* Colors */
-$orange-color: #E1563F;
-$lighest-of-yellows-color: #FFFDF9;
-$second-lighest-of-yellows-color: #F8E7CF;
+// suggest naming colors as color, color-light, color-dark. This would make the color names more logical/consistent. 
+$orange-color: #E34C32;
+$orange-dark: darken($orange-color, 10%);
+$lightest-of-yellows-color: #FFFDF9;
+$second-lightest-of-yellows-color: #F8E7CF;
 $red-color: #c13c27;
 $dull-red-color: #dd6a58;
 $brown-orange-color: #ab5d27;
 $brown-color: #865931;
 // $blue-color: #3c64b6; @check: why is status blue different from regular blue?
-$black-color: #252525;
-
+$black-color: #212121;
+$white-color: #fdfdfd;
 $green-color: #579e4a;
 $light-green-color: #d4fea8;
 $blue-color: #2683ab;
@@ -25,25 +27,31 @@ $under-consideration-color: $dirty-yellow-color;
 $under-consideration-highlight-color: $light-yellow-color;
 
 /* Screen sizes */
+// suggest a mobile-first approach, which is more standard in web design. 
 $screen-sm-min: 768px;
 $screen-md-min: 992px;
 $screen-lg-min: 1200px;
-
 $icon-height: 60px;
 $right-hand-column-width-percent: 30%;
-
 $side-padding: 1rem;
 
+/* Typography */
+$font-family: 'Roboto', sans-serif;
+// $font-family-heading: 'Alegreya Sans', 'Roboto', 'Source Sans Pro', sans-serif; //idk needs work still. 
+$font-size: 18px;
+$line-height: 1.2;
+
 // -- site.css.scss
+// suggest not capitalizing css class names. 
 body {
-  background-color: white;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  padding: o;
-  margin: 0;
+    background-color: $white-color;
+    font-family: $font-family;
+    font-size: $font-size;
+    line-height: $line-height;
+    color: $black-color;
+    -webkit-font-smoothing: antialiased;
+    padding: 0;
+    margin: 0;
 }
 
 a {
@@ -55,150 +63,187 @@ a:active {
     outline: none;
 }
 
-a:active, a:focus, a:hover {
+a:active,
+a:focus,
+a:hover {
     color: $red-color;
+    cursor: pointer;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
-  font-size: 1rem;
-  line-height: 1.2;
-  margin: 0 0 0.75em;
-  font-weight: bold;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-family;
+    line-height: 1;
+    margin: 0 0 0.75em;
+    font-weight: bold;
 }
 
 h1 {
-  color: $dull-red-color;
-  font-size: 2em;
+    color: $orange-color;
+    font-size: 2em;
 }
 
 h2 {
-  color: $brown-color;
-  font-size: 1.66667em; // @magic: should be calculation
+    color: $brown-color;
+    font-size: 1.66667em; // @magic: should be calculation
 }
 
 h3 {
-  margin: 0 0 1em;
-  font-size: 1.38889em; // @magic: should be calculation
+    margin: 0 0 1em;
+    font-size: 1.38889em; // @magic: should be calculation
 }
 
-ul, p {
-  margin: 0 0 1em;
+ul,
+p {
+    margin: 0 0 1em;
+    font-size: 1em;
 }
 
 .Roadmap-Intro {
-  padding: 0 $side-padding;
-  margin: 2em 0;
+    padding: 0 $side-padding;
+    margin: 2em 0;
+    @media screen and (max-width: 767px) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    @media screen and (min-width:768px) {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
 }
 
 .Features {
-  margin: 2em 0;
-  background: $lighest-of-yellows-color;
-  border-top: 1px solid $second-lighest-of-yellows-color;
+    margin: 2em 0;
+    background: $lightest-of-yellows-color;
+    border-top: 1px solid $second-lightest-of-yellows-color;
+    @media screen and (max-width: 767px) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    @media screen and (min-width:768px) {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
 }
 
 .Feature {
-  padding: 2em $side-padding;
-  display: block;
-
-  &:nth-child(2n) {
-    background: white;
-  }
+    padding: 2em $side-padding;
+    display: block;
+    &:nth-child(2n) {
+        background: white;
+    }
 }
 
 .Feature-Inner {
-  width: 100%;
+    width: 100%;
 }
 
 .Feature-Head {
-  margin-bottom: 1em;
+    margin-bottom: 1em;
 }
 
 .Feature-Icon {
-  width: $icon-height;
-  height: $icon-height;
-  display: block;
-  float: left;
-  margin: 0 1em 0 0;
+    display: block;
+    float: left;
+    height: $icon-height;
+    margin: 2px 1em 0 0;
+    width: $icon-height;
 }
 
 .Feature-Heading {
-  line-height: 1em;
-  margin-bottom: 0.5em;
+    color: $orange-dark;
+    line-height: 1;
+    margin-bottom: 0.1em;
+    padding-top: 0;
+    text-align: left;
+    button {
+        background-color: transparent;
+        border-color: transparent;
+        color: inherit;
+        font-family: inherit;
+        font-size: inherit;
+        margin: 0;
+        padding: 0;
+        text-align: left;
+        width: 100%;
+        &.disabled {
+            cursor: not-allowed;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
 }
 
-
 .Feature-Status {
-  margin: 0;
-  line-height: 1em;
-  font-weight: bold;
-  font-size: 1.2em;
-
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-
-  &:before {
-    content: '';
-    border: 1px solid black;
-    border-radius: 50%;
-    width: 1em;
-    height: 1em;
-    margin-right: 0.5em;
-    display: inline-block;
-  }
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.2em;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    &:before {
+        content: '';
+        border: 1px solid $black-color;
+        border-radius: 50%;
+        width: 1em;
+        height: 1em;
+        margin-right: 0.5em;
+        display: inline-block;
+    }
 }
 
 // @dry: Figure out how to use a mixin here
 .status--shipped {
-  color: $shipped-color;
-
-  &:before {
-    background: $shipped-highlight-color;
-    border-color: $shipped-color;
-  }
+    color: $shipped-color;
+    &:before {
+        background: $shipped-highlight-color;
+        border-color: $shipped-color;
+    }
 }
 
 .status--in-development {
-  color: $in-development-color;
-
-  &:before {
-    background: $in-development-highlight-color;
-    border-color: $in-development-color;
-  }
+    color: $in-development-color;
+    &:before {
+        background: $in-development-highlight-color;
+        border-color: $in-development-color;
+    }
 }
 
 .status--under-consideration {
-  color: $under-consideration-color;
-
-  &:before {
-    background: $under-consideration-highlight-color;
-    border-color: $under-consideration-color;
-  }
+    color: $under-consideration-color;
+    &:before {
+        background: $under-consideration-highlight-color;
+        border-color: $under-consideration-color;
+    }
 }
 
-.Feature-Status, .Feature-Description {
-  margin-top: 0.5em;
+.Feature-Status,
+.Feature-Description {
+    margin-top: 0.5em;
 }
 
 .Feature-Detail {
-  margin-top: 2em;
-
-  h3 {
-    margin: 0 0 0.5em;
-    font-size: 1.2em;
-    color: $brown-orange-color;
-  }
+    margin-top: 2em;
+    h3 { //suggest that the h3 that has already been define be made consistent with this style. 
+        margin: 0 0 0.5em;
+        font-size: 1.2em;
+        color: $brown-orange-color;
+    }
 }
 
 .Feature-ResourcesList {
-  padding: 0;
-  list-style: none;
+    padding: 0;
+    list-style: none;
 }
 
 .Feature-Champions {
-  padding: 0;
-  list-style: none;
+    padding: 0;
+    list-style: none;
 }
 
 .Feature-Champion {
@@ -219,42 +264,49 @@ ul, p {
   }
 }
 
-@media(min-width: $screen-sm-min) {
-  .Feature {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
-  
-  .Feature-Inner {
-    margin-left: 1em;
-  }
-
-
-  .Feature-Icon {
-    float: none;
-    margin: 0;
-  }
-
-  .Feature-HeadContent, .Feature-Detail {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-  }
-
-  .Feature-Description, .Feature-DetailContent {
-    width: calc(#{100 - $right-hand-column-width-percent} - 60px);
-  }
-
-  .Feature-Status, .Feature-Availability {
-    width: $right-hand-column-width-percent;
-  }
-
-  .Feature-Status, .Feature-Description {
-    margin-top: 0;
-  }
+@media(min-width: $screen-sm-min) { 
+    //suggest that CSS media queries be added to the classes where they already exist instead of in a separate section, to make caring for the CSS a bit easier.
+    .Feature {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .Feature-Inner {
+        margin-left: 1em;
+    }
+    .Feature-Icon {
+        float: none;
+        // margin: 0;
+    }
+    .Feature-HeadContent,
+    .Feature-Detail {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+    .Feature-Description,
+    .Feature-DetailContent {
+        width: calc(#{100 - $right-hand-column-width-percent} - 60px);
+    }
+    .Feature-Status,
+    .Feature-Availability {
+        width: $right-hand-column-width-percent;
+    }
+    .Feature-Status,
+    .Feature-Description {
+        margin-top: 0;
+    }
 }
 
 // .u-hidden {
 //   display: none;
 // }
+
+/* Helper Classes */
+//suggest all project devs familiarize themselves with the common helper classes to avoid duplication. 
+.hidden {
+    display: none;
+}
+.shown {
+    display: block;
+}

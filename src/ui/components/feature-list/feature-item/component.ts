@@ -20,4 +20,14 @@ export default class FeatureItem extends Component {
     // toggle() {
     //     this.isOpen = !this.isOpen;
     // }
+    
+    // interaction with h2>button should toggle these:
+    //aria-expanded on the h2>button
+    //aria-hidden on the feature.description
+    //the hidden/shown class on the feature.description
+
+    //need an Id and a descriptionId for the aria-controls & aria-labelledby values
+
+
+
 };
