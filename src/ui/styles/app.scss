@@ -181,6 +181,24 @@ p {
     }
 }
 
+.Feature-Expand {
+    background-color: transparent;
+    border-color: transparent;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    width: 100%;
+    &.disabled {
+        cursor: not-allowed;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+}
+
 .Feature-Status {
     margin: 0;
     font-weight: bold;
@@ -262,7 +280,7 @@ p {
   img {
     border-radius: 50%;
     margin-right: 7px;
-    width: 100px;
+    width: 80px;
   }
 }
 
@@ -300,9 +318,9 @@ p {
     }
 }
 
-// .u-hidden {
-//   display: none;
-// }
+.u-hidden {
+  display: none;
+}
 
 /* Helper Classes */
 //suggest all project devs familiarize themselves with the common helper classes to avoid duplication. 

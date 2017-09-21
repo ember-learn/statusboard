@@ -1,25 +1,27 @@
 import Component, { tracked } from '@glimmer/component';
 
 export default class FeatureItem extends Component {
-    // @tracked isOpen = true;
+    @tracked isOpen = false;
 
     @tracked('@feature')
     get feature() {
         return this.args.feature;
     }
 
-    // @tracked('isOpen')
-    // get stateClass() {
-    //     if(!this.isOpen) {
-    //         return 'u-hidden';
-    //     }
+    @tracked('isOpen')
+    get stateClass() {
+        if (!this.isOpen) {
+            return 'u-hidden';
+        }
 
-    //     return '';
-    // }
+        return '';
+    }
 
-    // toggle() {
-    //     this.isOpen = !this.isOpen;
-    // }
+    toggle(event) {
+        event.stopPropagation();
+        event.preventDefault();
+        this.isOpen = !this.isOpen;
+    }
     
     // interaction with h2>button should toggle these:
     //aria-expanded on the h2>button
@@ -27,7 +29,4 @@ export default class FeatureItem extends Component {
     //the hidden/shown class on the feature.description
 
     //need an Id and a descriptionId for the aria-controls & aria-labelledby values
-
-
-
 };

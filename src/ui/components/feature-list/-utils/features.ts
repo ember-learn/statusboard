@@ -12,6 +12,7 @@ interface IChampion {
 
 interface IFeature {
     name: string;
+    summary: string;
     description: string;
     icon: string;
     statusText: string;
@@ -24,6 +25,13 @@ interface IFeature {
 const Features: Array<IFeature> = [
     {
         "name": "JavaScript Modules API",
+        "summary": `
+When Ember was first designed,
+JavaScript did not have the concept of modules and it was the style du jour for front-end code to rely on globals.
+This is how the framework ended up with the \`Ember\` namespace,
+such as \`Ember.Controller\` or \`Ember.Route\`,
+and ultimately \`import Ember from 'Ember'\` when the framework started adopting the then upcoming ES Modules specification.
+`,
         "description": `
 When Ember was first designed,
 JavaScript did not have the concept of modules and it was the style du jour for front-end code to rely on globals.
@@ -94,8 +102,8 @@ We also provide an [ember-modules-codemod](https://github.com/tomdale/ember-modu
     },
     {
         "name": "Router Service",
-        "description": `
-`,
+        "summary": `Summary regarding Router Service`,
+        "description": `Thorough description of the Router Service`,
         "icon": "http://placehold.it/60x60",
         "statusText": "Partially shipped",
         "status": "shipped",

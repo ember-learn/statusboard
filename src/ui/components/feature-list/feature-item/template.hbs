@@ -2,15 +2,22 @@
     {{!-- <img class="Feature-Icon" src="{{feature.icon}}"> --}}
     <div class="Feature-Inner">
         <div class="Feature-Head">
-            <h2 class="Feature-Heading"><button id="{{feature.id}}" aria-controls="{{feature.descriptionId}}" aria-expanded="false">{{feature.name}}</button></h2>
+            <h2 class="Feature-Heading"><button id="{{feature.id}}" aria-controls="{{feature.descriptionId}}" aria-expanded="false" onclick={{action toggle}}>{{feature.name}}</button></h2>
             <div class="Feature-HeadContent">
                 <p class="Feature-Status status--{{feature.status}}">{{feature.statusText}}</p>
                 <div class="Feature-Description" id="{{feature.descriptionId}}" aria-labelledby="{{feature.id}}">
-                    <mark-down @text={{feature.description}}></mark-down>
+                    {{#if isOpen}}
+                        <mark-down @text={{feature.description}}></mark-down>
+                        <a href="" onclick={{action toggle}}>Show less</a>
+                    {{else}}
+                        <mark-down @text={{feature.summary}}></mark-down>
+                        <a href="" id="{{feature.id}}" aria-controls="{{feature.descriptionId}}" aria-expanded="false" onclick={{action toggle}}>Show more</a>
+                        <button id="{{feature.id}}" class="Feature-Expand" aria-controls="{{feature.descriptionId}}" aria-expanded="false" onclick={{action toggle}}>Expand</button>
+                    {{/if}}
                 </div>
             </div>
         </div>
-        <div class="Feature-Detail {{stateClass}}">
+        <div class="Feature-Detail">
             {{#if feature.availability}}
                 <div class="Feature-Availability">
                     <h3>Availability</h3>

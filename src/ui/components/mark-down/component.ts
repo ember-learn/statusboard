@@ -1,4 +1,4 @@
-import Component from '@glimmer/component';
+import Component, { tracked } from '@glimmer/component';
 
 const hljs = window.hljs;
 const MarkdownIt = window.markdownit({
@@ -17,6 +17,7 @@ export default class MarkDown extends Component {
   /**
    * Renders the Markdown text with syntax highlighting for code blocks.
    */
+  @tracked('args')
   get renderedText() {
     return MarkdownIt.render(this.args.text);
   }
