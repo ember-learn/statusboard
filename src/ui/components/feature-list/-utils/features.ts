@@ -33,12 +33,6 @@ such as \`Ember.Controller\` or \`Ember.Route\`,
 and ultimately \`import Ember from 'Ember'\` when the framework started adopting the then upcoming ES Modules specification.
 `,
         "description": `
-When Ember was first designed,
-JavaScript did not have the concept of modules and it was the style du jour for front-end code to rely on globals.
-This is how the framework ended up with the \`Ember\` namespace,
-such as \`Ember.Controller\` or \`Ember.Route\`,
-and ultimately \`import Ember from 'Ember'\` when the framework started adopting the then upcoming ES Modules specification.
-
 Now that modules are common placed, the above import of the \`Ember\` namespace feels outdated and monolithic.
 [RFC 176](https://github.com/emberjs/rfcs/blob/master/text/0176-javascript-module-api.md) was introduced to address that,
 providing a set of heuristics to help rationalize the surface of Ember's public API in a predictable manner,
@@ -102,7 +96,9 @@ We also provide an [ember-modules-codemod](https://github.com/tomdale/ember-modu
     },
     {
         "name": "Router Service",
-        "summary": `Summary regarding Router Service`,
+        "summary": `Routing is one of the pillars of Ember applications but interacting with it has been historically restricted.
+You had transition methods on Routes and Controllers, and \`currentRouteName\` in the application controller only.
+A router service is being introduced in phases so users can interact with routing in a richer fashion.`,
         "description": `Thorough description of the Router Service`,
         "icon": "http://placehold.it/60x60",
         "statusText": "Partially shipped",

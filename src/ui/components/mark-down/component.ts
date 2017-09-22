@@ -5,7 +5,7 @@ const MarkdownIt = window.markdownit({
   highlight(str, lang) {
     if (lang && hljs.getLanguage(lang)) {
       try {
-        return hljs.highlight(lang, str).value;
+        return `<pre class="hljs"><code>${hljs.highlight(lang, str, true).value}</code></pre>`;
       } catch (__) {}
     }
 

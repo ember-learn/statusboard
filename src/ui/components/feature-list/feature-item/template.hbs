@@ -6,14 +6,18 @@
             <div class="Feature-HeadContent">
                 <p class="Feature-Status status--{{feature.status}}">{{feature.statusText}}</p>
                 <div class="Feature-Description" id="{{feature.descriptionId}}" aria-labelledby="{{feature.id}}">
+                    <mark-down @text={{feature.summary}}></mark-down>
                     {{#if isOpen}}
                         <mark-down @text={{feature.description}}></mark-down>
-                        <a href="" onclick={{action toggle}}>Show less</a>
-                    {{else}}
-                        <mark-down @text={{feature.summary}}></mark-down>
-                        <a href="" id="{{feature.id}}" aria-controls="{{feature.descriptionId}}" aria-expanded="false" onclick={{action toggle}}>Show more</a>
-                        <button id="{{feature.id}}" class="Feature-Expand" aria-controls="{{feature.descriptionId}}" aria-expanded="false" onclick={{action toggle}}>Expand</button>
                     {{/if}}
+                    
+                    <a href="" id="{{feature.id}}" aria-controls="{{feature.descriptionId}}" aria-expanded="false" onclick={{action toggle}}>
+                        {{#if isOpen}}
+                            Show less
+                        {{else}}
+                            Show more
+                        {{/if}}
+                    </a>
                 </div>
             </div>
         </div>
