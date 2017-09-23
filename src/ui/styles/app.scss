@@ -1,11 +1,11 @@
 @import "syntax";
 @import "dracula";
 /* Colors */
-// suggest naming colors as color, color-light, color-dark. This would make the color names more logical/consistent. 
-$orange-color: #E34C32;
+// suggest naming colors as color, color-light, color-dark. This would make the color names more logical/consistent.
+$orange-color: #e34c32;
 $orange-dark: darken($orange-color, 10%);
-$lightest-of-yellows-color: #FFFDF9;
-$second-lightest-of-yellows-color: #F8E7CF;
+$lightest-of-yellows-color: #fffdf9;
+$second-lightest-of-yellows-color: #f8e7cf;
 $red-color: #c13c27;
 $dull-red-color: #dd6a58;
 $brown-orange-color: #ab5d27;
@@ -29,7 +29,7 @@ $under-consideration-color: $dirty-yellow-color;
 $under-consideration-highlight-color: $light-yellow-color;
 
 /* Screen sizes */
-// suggest a mobile-first approach, which is more standard in web design. 
+// suggest a mobile-first approach, which is more standard in web design.
 $screen-sm-min: 768px;
 $screen-md-min: 992px;
 $screen-lg-min: 1200px;
@@ -38,38 +38,53 @@ $right-hand-column-width-percent: 30%;
 $side-padding: 1rem;
 
 /* Typography */
-$font-family: 'Roboto', sans-serif;
-// $font-family-heading: 'Alegreya Sans', 'Roboto', 'Source Sans Pro', sans-serif; //idk needs work still. 
-$font-size: 18px;
-$line-height: 1.2;
+$font-family: "Roboto", sans-serif;
+$body-scale: 14px;
+$body-line-height: $body-scale * 1.5;
+$h3-scale: $body-scale * 1.5;
+$h3-line-height: $h3-scale * 1.5;
+$h2-scale: $h3-scale * 1.5;
+$h2-line-height: $h2-scale * 1.2;
+$h1-scale: $h2-scale * 1.5;
+$h1-line-height: $h1-scale * 1.2;
+
+$whitespace: 18px;
 
 // -- site.css.scss
-// suggest not capitalizing css class names. 
+// suggest not capitalizing css class names.
 body {
-    background-color: $white-color;
-    font-family: $font-family;
-    font-size: $font-size;
-    line-height: $line-height;
-    color: $black-color;
-    -webkit-font-smoothing: antialiased;
-    padding: 0;
-    margin: 0;
+  background-color: $white-color;
+  font-family: $font-family;
+  font-size: $body-scale;
+  line-height: $body-line-height;
+  color: $black-color;
+  -webkit-font-smoothing: antialiased;
+  padding: 0;
+  margin: 0;
+}
+
+@media screen and (max-width: $screen-sm-min) {
+  body {
+    font-size: 12px;
+  }
 }
 
 a {
-    color: $dull-red-color;
-    transition: color 0.1s linear;
+  color: $dull-red-color;
+  transition: color 0.1s linear;
+  text-decoration: none;
 }
 
 a:active {
-    outline: none;
+  outline: none;
 }
 
 a:active,
 a:focus,
 a:hover {
-    color: $red-color;
-    cursor: pointer;
+  color: $red-color;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 h1,
@@ -78,110 +93,104 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: $font-family;
-    line-height: 1;
-    margin: 0 0 0.75em;
-    font-weight: bold;
+  font-family: $font-family;
+  line-height: 1;
+  margin: $whitespace 0;
+  font-weight: bold;
 }
 
 h1 {
-    color: $orange-color;
-    font-size: 2em;
+  color: $orange-color;
+  font-size: $h1-scale;
+  line-height: $h1-line-height;
 }
 
 h2 {
-    color: $brown-color;
-    font-size: 1.66667em; // @magic: should be calculation
+  color: $brown-color;
+  font-size: $h2-scale;
+  line-height: $h2-line-height;
 }
 
 h3 {
-    margin: 0 0 1em;
-    font-size: 1.38889em; // @magic: should be calculation
+  margin: 0 0 1em;
+  font-size: $h3-scale;
+  line-height: $h3-line-height;
 }
 
 ul,
 p {
-    margin: 0 0 1em;
-    font-size: 1em;
+  font-size: 1em;
+  margin: ($whitespace / 2) 0;
 }
 
 .Roadmap-Intro {
-    padding: 0 $side-padding;
-    margin: 2em 0;
-    @media screen and (max-width: 767px) {
-        padding-left: 15px;
-        padding-right: 15px;
+  margin: ($whitespace*2) auto;
+  padding: 0 ($whitespace*2);
+  max-width: $screen-sm-min;
+
+  @media screen and (min-width: $screen-sm-min) {
+    margin: ($whitespace * 2) auto;
+  }
+
+  p {
+    font-size: $h3-scale;
+    line-height: $h3-line-height;
+  }
+
+  @media screen and (max-width: $screen-sm-min) {
+    p {
+      font-size: $body-scale;
+      line-height: $body-line-height;
     }
-    @media screen and (min-width:768px) {
-        padding-left: 10%;
-        padding-right: 10%;
-    }
+  }
+
 }
 
 .Features {
-    margin: 2em 0;
-    background: $lightest-of-yellows-color;
-    border-top: 1px solid $second-lightest-of-yellows-color;
-    @media screen and (max-width: 767px) {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-    @media screen and (min-width:768px) {
-        padding-left: 10%;
-        padding-right: 10%;
-    }
+  background: $lightest-of-yellows-color;
+  border-top: 1px solid $second-lightest-of-yellows-color;
+
+  @media screen and (max-width: 767px) {
+  }
+  @media screen and (min-width: 768px) {
+  }
 }
 
 .Feature {
-    padding: 2em 0;
-    display: block;
-    &:nth-child(2n) {
-        background: white;
-    }
+  display: block;
+  // margin-top: $whitespace * 2;
+  padding: ($whitespace * 2);
+  clear: both;
+
+  &:nth-child(2n) {
+    background: white;
+  }
 }
 
 .Feature-Inner {
-    width: 100%;
+  margin: 0 auto;
+  max-width: $screen-sm-min;
 }
 
 .Feature-Head {
-    margin-bottom: 1em;
+  margin-bottom: $whitespace;
 }
 
 .Feature-Icon {
-    display: block;
-    float: left;
-    height: $icon-height;
-    margin: 2px 1em 0 0;
-    width: $icon-height;
+  display: block;
+  float: left;
+  height: $icon-height;
+  margin: 2px 1em 0 0;
+  width: $icon-height;
 }
 
 .Feature-Heading {
-    color: $orange-dark;
-    line-height: 1;
-    margin-bottom: 0.1em;
-    padding-top: 0;
-    text-align: left;
-    button {
-        background-color: transparent;
-        border-color: transparent;
-        color: inherit;
-        font-family: inherit;
-        font-size: inherit;
-        margin: 0;
-        padding: 0;
-        text-align: left;
-        width: 100%;
-        &.disabled {
-            cursor: not-allowed;
-        }
-        &:hover {
-            cursor: pointer;
-        }
-    }
-}
+  color: $orange-dark;
+  line-height: 1;
+  text-align: left;
+  margin-top: 0;
 
-.Feature-Expand {
+  button {
     background-color: transparent;
     border-color: transparent;
     color: inherit;
@@ -192,84 +201,117 @@ p {
     text-align: left;
     width: 100%;
     &.disabled {
-        cursor: not-allowed;
+      cursor: not-allowed;
     }
     &:hover {
-        cursor: pointer;
+      cursor: pointer;
     }
+  }
+}
+
+.Feature-Expand {
+  background-color: transparent;
+  border-color: transparent;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+  &.disabled {
+    cursor: not-allowed;
+  }
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .Feature-Status {
-    margin: 0;
-    font-weight: bold;
-    font-size: 1.2em;
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    &:before {
-        content: '';
-        border: 1px solid $black-color;
-        border-radius: 50%;
-        width: 1em;
-        height: 1em;
-        margin-right: 0.5em;
-        display: inline-block;
-    }
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.2em;
+  line-height: 1.2em;
+
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  &:before {
+    content: "";
+    border: 1px solid $black-color;
+    border-radius: 50%;
+    width: 1em;
+    height: 1em;
+    margin-right: 0.5em;
+    display: inline-block;
+  }
 }
 
 // @dry: Figure out how to use a mixin here
 .status--shipped {
-    color: $shipped-color;
-    &:before {
-        background: $shipped-highlight-color;
-        border-color: $shipped-color;
-    }
+  color: $shipped-color;
+  &:before {
+    background: $shipped-highlight-color;
+    border-color: $shipped-color;
+  }
 }
 
 .status--in-development {
-    color: $in-development-color;
-    &:before {
-        background: $in-development-highlight-color;
-        border-color: $in-development-color;
-    }
+  color: $in-development-color;
+  &:before {
+    background: $in-development-highlight-color;
+    border-color: $in-development-color;
+  }
 }
 
 .status--under-consideration {
-    color: $under-consideration-color;
-    &:before {
-        background: $under-consideration-highlight-color;
-        border-color: $under-consideration-color;
-    }
+  color: $under-consideration-color;
+  &:before {
+    background: $under-consideration-highlight-color;
+    border-color: $under-consideration-color;
+  }
 }
 
 .Feature-Status,
 .Feature-Description {
-    margin-top: 0.5em;
+  margin: $whitespace 0;
+}
+
+.Feature-Description > div {
+  p, ul {
+    margin-top: 0;
+  }
 }
 
 .Feature-Detail {
-    margin-top: 2em;
-    h3 { //suggest that the h3 that has already been define be made consistent with this style. 
-        margin: 0 0 0.5em;
-        font-size: 1.2em;
-        color: $brown-orange-color;
-    }
+  h3 {
+    margin: 0 0 ($whitespace / 2);
+    font-size: 1.2em;
+    color: $brown-orange-color;
+  }
 }
 
 .Feature-ResourcesList {
-    padding: 0;
-    list-style: none;
+  padding: 0;
+  list-style: none;
 }
 
 .Feature-Champions {
-    padding: 0;
-    list-style: none;
+  padding: 0;
+  list-style: none;
+
+  @media screen and (min-width: $screen-sm-min) {
+    display: flex;
+  }
 }
 
 .Feature-Champion {
-  float: left;
   margin-right: 20px;
-  margin-bottom: 0.25em;
+  margin-bottom: ($whitespace / 2);
+
+  @media screen and (min-width: $screen-sm-min) {
+    display: block;
+  }
 
   a {
     display: flex;
@@ -284,38 +326,38 @@ p {
   }
 }
 
-@media(min-width: $screen-sm-min) { 
-    //suggest that CSS media queries be added to the classes where they already exist instead of in a separate section, to make caring for the CSS a bit easier.
-    .Feature {
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
-    }
-    // .Feature-Inner {
-    //     margin-left: 1em;
-    // }
-    .Feature-Icon {
-        float: none;
-        // margin: 0;
-    }
-    .Feature-HeadContent,
-    .Feature-Detail {
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: space-between;
-    }
-    .Feature-Description,
-    .Feature-DetailContent {
-        width: calc(#{100 - $right-hand-column-width-percent} - 60px);
-    }
-    .Feature-Status,
-    .Feature-Availability {
-        width: $right-hand-column-width-percent;
-    }
-    .Feature-Status,
-    .Feature-Description {
-        margin-top: 0;
-    }
+@media (min-width: $screen-sm-min) {
+  //suggest that CSS media queries be added to the classes where they already exist instead of in a separate section, to make caring for the CSS a bit easier.
+  .Feature {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  // .Feature-Inner {
+  //     margin-left: 1em;
+  // }
+  .Feature-Icon {
+    float: none;
+    // margin: 0;
+  }
+  .Feature-HeadContent,
+  .Feature-Detail {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  .Feature-Description,
+  .Feature-DetailContent {
+    width: calc(#{100 - $right-hand-column-width-percent} - 60px);
+  }
+  .Feature-Status,
+  .Feature-Availability {
+    width: $right-hand-column-width-percent;
+  }
+  .Feature-Status,
+  .Feature-Description {
+    margin-top: 0;
+  }
 }
 
 .u-hidden {
@@ -323,10 +365,10 @@ p {
 }
 
 /* Helper Classes */
-//suggest all project devs familiarize themselves with the common helper classes to avoid duplication. 
+//suggest all project devs familiarize themselves with the common helper classes to avoid duplication.
 .hidden {
-    display: none;
+  display: none;
 }
 .shown {
-    display: block;
+  display: block;
 }
