@@ -133,7 +133,7 @@ p {
 }
 
 .Feature {
-    padding: 2em $side-padding;
+    padding: 2em 0;
     display: block;
     &:nth-child(2n) {
         background: white;
@@ -291,9 +291,9 @@ p {
         justify-content: flex-start;
         align-items: flex-start;
     }
-    .Feature-Inner {
-        margin-left: 1em;
-    }
+    // .Feature-Inner {
+    //     margin-left: 1em;
+    // }
     .Feature-Icon {
         float: none;
         // margin: 0;
