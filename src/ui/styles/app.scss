@@ -63,12 +63,6 @@ body {
   margin: 0;
 }
 
-@media screen and (max-width: $screen-sm-min) {
-  body {
-    font-size: 12px;
-  }
-}
-
 a {
   color: $dull-red-color;
   transition: color 0.1s linear;
