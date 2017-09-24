@@ -22,6 +22,15 @@ interface IFeature {
     champions: Array<IChampion>;
 }
 
+enum Status {
+    SHIPPED = 'shipped'
+}
+
+enum StatusText {
+    PARTIALLY_SHIPPED = "Partially Shipped",
+    SHIPPED = "Shipped"
+}
+
 const Features: Array<IFeature> = [
     {
         "name": "JavaScript Modules API",
@@ -61,8 +70,8 @@ the [ember-rfc176-data](https://github.com/ember-cli/ember-rfc176-data) reposito
 We also provide an [ember-modules-codemod](https://github.com/tomdale/ember-modules-codemod) so that you can easily migrate your project.
 `,
         "icon": "http://placehold.it/60x60",
-        "statusText": "Shipped",
-        "status": "shipped",
+        "statusText": StatusText.SHIPPED,
+        "status": Status.SHIPPED,
         "availability": "Available in Ember CLI Babel v6.6.0 and up",
         "resources": [
             {
@@ -101,8 +110,8 @@ You had transition methods on Routes and Controllers, and \`currentRouteName\` i
 A router service is being introduced in phases so users can interact with routing in a richer fashion.`,
         "description": `Thorough description of the Router Service`,
         "icon": "http://placehold.it/60x60",
-        "statusText": "Partially shipped",
-        "status": "shipped",
+        "statusText": StatusText.PARTIALLY_SHIPPED,
+        "status": Status.SHIPPED,
         "availability": "Available in Ember 2.15 and up",
         "resources": [
             {
