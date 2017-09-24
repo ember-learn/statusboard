@@ -7,9 +7,15 @@ const Rollup = require('broccoli-rollup');
 const merge = require('broccoli-merge-trees');
 const resolve = require('rollup-plugin-node-resolve');
 const commonjs = require('rollup-plugin-commonjs');
+const yaml2json = require('broccoli-yaml');
 
 module.exports = function(defaults) {
+  let src = json(yaml2json('src'));
+
   let app = new GlimmerApp(defaults, {
+    trees: {
+      src
+    },
     rollup: {
       plugins: [
         resolve({ jsnext: true, module: true, main: true }),

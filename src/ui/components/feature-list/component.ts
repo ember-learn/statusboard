@@ -1,6 +1,6 @@
 import Component from '@glimmer/component';
-import Features from './-utils/features';
+import DATA from './-utils/features';
 
 export default class FeatureList extends Component {
-    features = Features
+    features = DATA.features;
 };
