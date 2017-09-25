@@ -6,6 +6,8 @@ $screen-lg-min: 1200px;
 $icon-height: 60px;
 $right-hand-column-width-percent: 30%;
 $side-padding: 1rem;
+$side-offset: $side-padding * 6;
+$whitespace: 18px;
 
 /* Typography */
 $font-family: "Roboto", sans-serif;
@@ -17,5 +19,3 @@ $h2-scale: $h3-scale * 1.5;
 $h2-line-height: $h2-scale * 1.2;
 $h1-scale: $h2-scale * 1.5;
 $h1-line-height: $h1-scale * 1.2;
-
-$whitespace: 18px;
