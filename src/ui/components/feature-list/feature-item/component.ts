@@ -3,7 +3,7 @@ import Component, { tracked } from '@glimmer/component';
 export default class FeatureItem extends Component {
     @tracked isOpen = false;
 
-    @tracked('@feature')
+    @tracked('args')
     get feature() {
         return this.args.feature;
     }
