@@ -35,7 +35,6 @@ features:
       repository. We also provide an
       [ember-modules-codemod](https://github.com/tomdale/ember-modules-codemod)
       so that you can easily migrate your project.
-    icon: http://placehold.it/60x60
     status: shipped
     statusText: Shipped
     availability: Available in Ember CLI Babel v6.6.0 and up
@@ -116,7 +115,6 @@ features:
       2, which requires coordination and refactoring of the `RouteInfo` data structure
       across [router.js](https://github.com/tildeio/router.js/) and Ember's current
       `outletState` and `handlerInfos` data structures.
-    icon: http://placehold.it/60x60
     status: shipped
     statusText: Partially Shipped
     availability: Available in Ember 2.15 and up
