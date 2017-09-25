@@ -29,7 +29,7 @@
     "ember-cli-inject-live-reload": "^1.6.1",
     "ember-cli-sass": "^6.2.0",
     "ember-cli-uglify": "^2.0.0-beta.1",
-    "markdown-it": "^8.3.2",
+    "markdown-it": "^8.4.0",
     "qunitjs": "^2.3.3",
     "typescript": "^2.2.2"
   },
@@ -38,8 +38,11 @@
   },
   "private": true,
   "dependencies": {
+    "@types/highlight.js": "^9.1.10",
     "broccoli-yaml": "^0.0.3",
+    "highlight.js": "^9.12.0",
     "rollup-plugin-commonjs": "^8.2.0",
+    "rollup-plugin-json": "^2.3.0",
     "rollup-plugin-node-resolve": "^3.0.0",
     "yarn": "^1.0.2"
   }

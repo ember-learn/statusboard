@@ -1,24 +1,6 @@
+@import "colors";
+@import "layout";
 @import "syntax";
-@import "dracula";
-/* Colors */
-// suggest naming colors as color, color-light, color-dark. This would make the color names more logical/consistent.
-$orange-color: #e34c32;
-$orange-dark: darken($orange-color, 10%);
-$lightest-of-yellows-color: #fffdf9;
-$second-lightest-of-yellows-color: #f8e7cf;
-$red-color: #c13c27;
-$dull-red-color: #dd6a58;
-$brown-orange-color: #ab5d27;
-$brown-color: #865931;
-// $blue-color: #3c64b6; @check: why is status blue different from regular blue?
-$black-color: #212121;
-$white-color: #fdfdfd;
-$green-color: #579e4a;
-$light-green-color: #d4fea8;
-$blue-color: #2683ab;
-$light-blue-color: #cbebfe;
-$dirty-yellow-color: #a28b5b;
-$light-yellow-color: #fff8ae;
 
 /* Status colours */
 $shipped-color: $green-color;
@@ -28,30 +10,6 @@ $in-development-highlight-color: $light-blue-color;
 $under-consideration-color: $dirty-yellow-color;
 $under-consideration-highlight-color: $light-yellow-color;
 
-/* Screen sizes */
-// suggest a mobile-first approach, which is more standard in web design.
-$screen-sm-min: 768px;
-$screen-md-min: 992px;
-$screen-lg-min: 1200px;
-$icon-height: 60px;
-$right-hand-column-width-percent: 30%;
-$side-padding: 1rem;
-
-/* Typography */
-$font-family: "Roboto", sans-serif;
-$body-scale: 14px;
-$body-line-height: $body-scale * 1.5;
-$h3-scale: $body-scale * 1.5;
-$h3-line-height: $h3-scale * 1.5;
-$h2-scale: $h3-scale * 1.5;
-$h2-line-height: $h2-scale * 1.2;
-$h1-scale: $h2-scale * 1.5;
-$h1-line-height: $h1-scale * 1.2;
-
-$whitespace: 18px;
-
-// -- site.css.scss
-// suggest not capitalizing css class names.
 body {
   background-color: $white-color;
   font-family: $font-family;
@@ -122,16 +80,15 @@ p {
   padding: 0 ($whitespace*2);
   max-width: $screen-sm-min;
 
-  @media screen and (min-width: $screen-sm-min) {
-    margin: ($whitespace * 2) auto;
-  }
-
   p {
     font-size: $h3-scale;
     line-height: $h3-line-height;
   }
 
   @media screen and (max-width: $screen-sm-min) {
+    margin: $whitespace auto;
+    padding: 0 $whitespace;
+
     p {
       font-size: $body-scale;
       line-height: $body-line-height;
@@ -152,8 +109,7 @@ p {
 
 .Feature {
   display: block;
-  // margin-top: $whitespace * 2;
-  padding: ($whitespace * 2);
+  padding: $whitespace;
   clear: both;
 
   &:nth-child(2n) {
@@ -168,7 +124,7 @@ p {
 }
 
 .Feature-Head {
-  margin-bottom: $whitespace;
+  // margin-bottom: $whitespace;
 }
 
 .Feature-Icon {
@@ -184,6 +140,17 @@ p {
   line-height: 1;
   text-align: left;
   margin-top: 0;
+
+  h2 {
+    margin: 0;
+  }
+
+  @media screen and (min-width: $screen-sm-min) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 
   button {
     background-color: transparent;
@@ -223,7 +190,7 @@ p {
 }
 
 .Feature-Status {
-  margin: 0;
+  margin: $whitespace 0;
   font-weight: bold;
   font-size: 1.2em;
   line-height: 1.2em;
@@ -267,9 +234,8 @@ p {
   }
 }
 
-.Feature-Status,
 .Feature-Description {
-  margin: $whitespace 0;
+  // margin: $whitespace 0;
 }
 
 .Feature-Description > div {
@@ -341,17 +307,12 @@ p {
     flex-direction: row-reverse;
     justify-content: space-between;
   }
-  .Feature-Description,
+  .Feature-Description {
+    width: 100%;
+  }
+
   .Feature-DetailContent {
     width: calc(#{100 - $right-hand-column-width-percent} - 60px);
-  }
-  .Feature-Status,
-  .Feature-Availability {
-    width: $right-hand-column-width-percent;
-  }
-  .Feature-Status,
-  .Feature-Description {
-    margin-top: 0;
   }
 }
 

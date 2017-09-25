@@ -1,12 +1,15 @@
 import Component, { tracked } from '@glimmer/component';
+import markdownit from 'markdown-it';
+import hljs from './-utils/highlight';
 
-const hljs = window.hljs;
-const MarkdownIt = window.markdownit({
+const MarkdownIt = markdownit({
   highlight(str, lang) {
     if (lang && hljs.getLanguage(lang)) {
       try {
         return `<pre class="hljs"><code>${hljs.highlight(lang, str, true).value}</code></pre>`;
-      } catch (__) {}
+      } catch (err) {
+        console.log('Error highlighting', lang, err);
+      }
     }
 
     return ''; // use external default escaping

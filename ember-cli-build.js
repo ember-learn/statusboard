@@ -1,16 +1,17 @@
 'use strict';
 
 const GlimmerApp = require('@glimmer/application-pipeline').GlimmerApp;
-const json = require('broccoli-json-module');
+const jsonModules = require('broccoli-json-module');
 const Funnel = require('broccoli-funnel');
 const Rollup = require('broccoli-rollup');
 const merge = require('broccoli-merge-trees');
 const resolve = require('rollup-plugin-node-resolve');
 const commonjs = require('rollup-plugin-commonjs');
+const json = require('rollup-plugin-json');
 const yaml2json = require('broccoli-yaml');
 
 module.exports = function(defaults) {
-  let src = json(yaml2json('src'));
+  let src = jsonModules(yaml2json('src'));
 
   let app = new GlimmerApp(defaults, {
     trees: {
@@ -18,7 +19,8 @@ module.exports = function(defaults) {
     },
     rollup: {
       plugins: [
-        resolve({ jsnext: true, module: true, main: true }),
+        resolve({ jsnext: true, module: true, main: true, preferBuiltins: false }),
+        json({ preferConst: true }),
         commonjs()
       ]
     }

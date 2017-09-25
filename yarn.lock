@@ -182,6 +182,10 @@
   dependencies:
     "@glimmer/util" "^0.26.2"
 
+"@types/highlight.js@^9.1.10":
+  version "9.1.10"
+  resolved "https://registry.yarnpkg.com/@types/highlight.js/-/highlight.js-9.1.10.tgz#b621f809cd9573b80992b90cffc5788208e3069c"
+
 "@types/qunit@^2.0.31":
   version "2.0.31"
   resolved "https://registry.yarnpkg.com/@types/qunit/-/qunit-2.0.31.tgz#a53e2cf635262c8bf46a71a137d8c7970dde9562"
@@ -3140,6 +3144,10 @@ heimdalljs@^0.3.0-alpha3:
   dependencies:
     rsvp "~3.2.1"
 
+highlight.js@^9.12.0:
+  version "9.12.0"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.12.0.tgz#e6d9dbe57cbefe60751f02af336195870c90c01e"
+
 hoek@2.x.x:
   version "2.16.3"
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-2.16.3.tgz#20bb7403d3cea398e91dc4710a8ff1b8274a25ed"
@@ -3977,7 +3985,7 @@ markdown-it-terminal@0.1.0:
     lodash.merge "^4.6.0"
     markdown-it "^8.3.1"
 
-markdown-it@^8.3.0, markdown-it@^8.3.1, markdown-it@^8.3.2:
+markdown-it@^8.3.0, markdown-it@^8.3.1, markdown-it@^8.4.0:
   version "8.4.0"
   resolved "https://registry.yarnpkg.com/markdown-it/-/markdown-it-8.4.0.tgz#e2400881bf171f7018ed1bd9da441dac8af6306d"
   dependencies:
@@ -4895,6 +4903,12 @@ rollup-plugin-commonjs@^8.2.0:
     estree-walker "^0.5.0"
     magic-string "^0.22.4"
     resolve "^1.4.0"
+    rollup-pluginutils "^2.0.1"
+
+rollup-plugin-json@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-json/-/rollup-plugin-json-2.3.0.tgz#3c07a452c1b5391be28006fbfff3644056ce0add"
+  dependencies:
     rollup-pluginutils "^2.0.1"
 
 rollup-plugin-node-resolve@^2.0.0:

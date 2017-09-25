@@ -4,37 +4,37 @@ features:
     summary: |
       Allows developers to import just the parts of Ember they want via a JavaScript
       (ES6) modules API.
+    description: |
+      While Ember.js apps use JavaScript modules, the framework itself is still
+      accessed via the single global `Ember` or the single package `ember`.
 
       ```ts
-      import Component from '@ember/component';
-      ```
-    description: |
-      Now that modules are common placed, the above import of the `Ember` namespace feels outdated and monolithic.
-      [RFC 176](https://github.com/emberjs/rfcs/blob/master/text/0176-javascript-module-api.md) was introduced to address that,
-      providing a set of heuristics to help rationalize the surface of Ember's public API in a predictable manner,
-      as well as a new modules API.
-
-      Now, instead of doing the following when creating a controller:
-
-      ```typescript
       import Ember from 'ember';
-
-      export default Ember.Controller.extend({
+      export default Ember.Component.extend({
+        // ...
       });
       ```
 
-      You will be able to do:
+      [RFC 176](https://github.com/emberjs/rfcs/blob/master/text/0176-javascript-module-api.md)
+      describes a module API for Ember that allows developers to import specific modules rather
+      than the whole framework. Decomposing the framework into small modules like this will
+      both make Ember more accessible to new users, as well as allow Ember CLI to build smaller
+      assets by only including the parts of the framework that actually get used.
 
       ```typescript
-      import Controller from '@ember/controller';
+      import Component from '@ember/component';
 
-      export default Controller.extend({
+      export default Component.extend({
+        // ...
       });
       ```
 
-      You can find the most up-to-date and complete mappings between the previous API and the new modules api at
-      the [ember-rfc176-data](https://github.com/ember-cli/ember-rfc176-data) repository.
-      We also provide an [ember-modules-codemod](https://github.com/tomdale/ember-modules-codemod) so that you can easily migrate your project.
+      You can find the most up-to-date and complete mappings between the
+      previous API and the new modules API at the
+      [ember-rfc176-data](https://github.com/ember-cli/ember-rfc176-data)
+      repository. We also provide an
+      [ember-modules-codemod](https://github.com/tomdale/ember-modules-codemod)
+      so that you can easily migrate your project.
     icon: http://placehold.it/60x60
     status: shipped
     statusText: Shipped
@@ -58,10 +58,12 @@ features:
         url: https://github.com/locks
   - name: Router Service
     summary: |
-      Routing is one of the pillars of Ember applications but interacting with it has been historically restricted.
-      You had transition methods on Routes and Controllers, and `currentRouteName` in the application controller only.
-      A router service is being introduced in phases so users can interact with routing in a richer fashion.
-    description: Thorough description of the Router Service
+      Provides low-level, imperative access to Ember's router. The router
+      service gives greater control to app and addon authors over an
+      application's routes.
+    description: |
+      Routing is 
+      
     icon: http://placehold.it/60x60
     status: shipped
     statusText: Partially Shipped

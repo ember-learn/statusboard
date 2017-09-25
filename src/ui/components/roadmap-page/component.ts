@@ -1,10 +1,6 @@
 import Component from "@glimmer/component";
-import { default as FeatureService, Feature } from './../../../utils/data';
+import DATA from './-utils/features';
 
 export default class RoadmapPage extends Component {
-  featureService = new FeatureService();
-
-  get features(): Feature[] {
-    return this.featureService.fetchFeatures();
-  }
+  features = DATA.features;
 }

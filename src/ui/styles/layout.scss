@@ -1,0 +1,21 @@
+/* Screen sizes */
+// suggest a mobile-first approach, which is more standard in web design.
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+$icon-height: 60px;
+$right-hand-column-width-percent: 30%;
+$side-padding: 1rem;
+
+/* Typography */
+$font-family: "Roboto", sans-serif;
+$body-scale: 14px;
+$body-line-height: $body-scale * 1.5;
+$h3-scale: $body-scale * 1.5;
+$h3-line-height: $h3-scale * 1.5;
+$h2-scale: $h3-scale * 1.5;
+$h2-line-height: $h2-scale * 1.2;
+$h1-scale: $h2-scale * 1.5;
+$h1-line-height: $h1-scale * 1.2;
+
+$whitespace: 18px;
