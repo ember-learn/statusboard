@@ -1,6 +1,6 @@
-@import "colors";
-@import "layout";
-@import "syntax";
+@import 'colors';
+@import 'layout';
+@import 'syntax';
 
 /* Status colours */
 $shipped-color: $green-color;
@@ -25,15 +25,19 @@ body.status {
 
 .Features {
   clear: both;
-  margin: 2em $side-offset * -1;
+
+  margin: 2em 0em;
+  margin-left: -6em;
+  margin-right: -5em;
 
   &:before {
     display: block;
-    content: "";
+    content: '';
     width: 100%;
     height: 1px;
     background: $second-lightest-of-yellows-color;
-    background: linear-gradient(90deg,
+    background: linear-gradient(
+      90deg,
       rgba($second-lightest-of-yellows-color, 0) 0%,
       rgba($second-lightest-of-yellows-color, 1) 10%,
       rgba($second-lightest-of-yellows-color, 1) 90%,
@@ -48,7 +52,8 @@ body.status {
   clear: both;
 
   background: $lightest-of-yellows-color;
-  background: linear-gradient(90deg,
+  background: linear-gradient(
+    90deg,
     rgba($lightest-of-yellows-color, 0) 0%,
     rgba($lightest-of-yellows-color, 1) 10%,
     rgba($lightest-of-yellows-color, 1) 90%,
@@ -170,12 +175,10 @@ body.status {
 //   }
 // }
 
-
-
 .Feature-Inner {
   margin: 0 auto;
   width: 100%;
-  max-width: 50em;
+  // max-width: 50em;
 }
 
 .Feature-Head {
@@ -254,7 +257,7 @@ body.status {
   flex-direction: row;
   align-content: center;
   &:before {
-    content: "";
+    content: '';
     border: 1px solid $black-color;
     border-radius: 50%;
     width: 1em;
@@ -294,7 +297,8 @@ body.status {
 }
 
 .Feature-Description > div {
-  p, ul {
+  p,
+  ul {
     margin-top: 0;
   }
 }
@@ -382,4 +386,11 @@ body.status {
 }
 .shown {
   display: block;
+}
+
+// Override website defaults
+pre.hljs code {
+  background-color: #fdf7ee;
+  padding: 0;
+  color: $black-color;
 }
