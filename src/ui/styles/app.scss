@@ -24,12 +24,6 @@ body.status {
 }
 
 .Features {
-  clear: both;
-
-  margin: 2em 0em;
-  margin-left: -6em;
-  margin-right: -5em;
-
   &:before {
     display: block;
     content: '';
@@ -50,6 +44,8 @@ body.status {
   display: block;
   padding: 1em $side-offset;
   clear: both;
+
+  padding: 1em;
 
   background: $lightest-of-yellows-color;
   background: linear-gradient(
@@ -347,11 +343,21 @@ body.status {
 }
 
 @media (min-width: $screen-sm-min) {
+  .Features {
+    clear: both;
+
+    margin: 2em 0em;
+    margin-left: -6em;
+    margin-right: -5em;
+  }
+
   //suggest that CSS media queries be added to the classes where they already exist instead of in a separate section, to make caring for the CSS a bit easier.
   .Feature {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+
+    padding: 1em 6em;
   }
   // .Feature-Inner {
   //     margin-left: 1em;
