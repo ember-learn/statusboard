@@ -11,9 +11,13 @@ const json = require('rollup-plugin-json');
 const yaml2json = require('broccoli-yaml');
 
 module.exports = function(defaults) {
+
   let src = jsonModules(yaml2json('src'));
 
   let app = new GlimmerApp(defaults, {
+    fingerprint: {
+      prepend: 'https://ember-learn.github.io/statusboard/'
+    },
     trees: {
       src
     },
