@@ -159,7 +159,7 @@ features:
         name: Coordination doc with relevant issues
         url: https://docs.google.com/document/d/1P9q9K1JNadJclhFG0flUyY2GwKuOzTbgtUbOzuh6JYs/edit#heading=h.45ec702vuy8p
       - type: channel
-        name: \#st-module-unification
+        name: "#st-module-unification"
         url: https://embercommunity.slack.com
       - type: rfc
         name: Module Unification
