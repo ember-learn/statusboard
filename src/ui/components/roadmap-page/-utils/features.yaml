@@ -132,6 +132,42 @@ features:
       - name: Edward Faulkner
         image: https://avatars0.githubusercontent.com/u/319282?v=4&s=460
         url: https://github.com/ef4
+  - name: Module Unification
+    summary: |
+      Co-locate related parts of the framework such as templates,
+      components, and component tests with new filesystem layout.
+    description: |
+      Ember applications are compiled from JavaScript modules in the `app/` folder and addons.
+      The rules for how Ember finds a module for a given part of the system are coupled to the
+      implementation instead of any unified design.
+      
+      Module Unification describes a new way to lay out Ember applications and
+      addons in the `src/` directory.
+      This design allows us to co-locate related parts of the framework such as templates,
+      components, and component tests. It also creates smaller namespaces for components and
+      provides a pathway for addons to declare new types of modules. The rules for resolving
+      a Module Unification module are also much simpler than the existing rules, meaning
+      opportunities for better performance and compile-time optimizations.
+    status: in-development
+    statusText: In Implementation
+    availability: Not yet available.
+    resources:
+      - type: blogpost
+        name: EmberCamp Module Unification Update
+        url: https://madhatted.com/2017/7/12/embercamp-module-unification-update
+      - type: doc
+        name: Coordination doc with relevant issues
+        url: https://docs.google.com/document/d/1P9q9K1JNadJclhFG0flUyY2GwKuOzTbgtUbOzuh6JYs/edit#heading=h.45ec702vuy8p
+      - type: channel
+        name: \#st-module-unification
+        url: https://embercommunity.slack.com
+      - type: rfc
+        name: Module Unification
+        url: https://github.com/emberjs/rfcs/pull/143
+    champions:
+      - name: Matthew Beale
+        image: https://avatars0.githubusercontent.com/u/8752?v=4&s=460
+        url: https://github.com/mixonic
   - name: Ember/Glimmer.js Compatibility
     summary: |
       Seamlessly use components written using the [Glimmer.js](https://www.glimmerjs.com)
@@ -244,42 +280,6 @@ features:
       - name: Tom Dale
         image: https://avatars0.githubusercontent.com/u/90888?v=4&s=460
         url: https://github.com/tomdale
-  - name: Module Unification
-    summary: |
-      Co-locate related parts of the framework such as templates,
-      components, and component tests with new filesystem layout.
-    description: |
-      Ember applications are compiled from JavaScript modules in the `app/` folder and addons.
-      The rules for how Ember finds a module for a given part of the system are coupled to the
-      implementation instead of any unified design.
-      
-      Module Unification describes a new way to lay out Ember applications and
-      addons in the `src/` directory.
-      This design allows us to co-locate related parts of the framework such as templates,
-      components, and component tests. It also creates smaller namespaces for components and
-      provides a pathway for addons to declare new types of modules. The rules for resolving
-      a Module Unification module are also much simpler than the existing rules, meaning
-      opportunities for better performance and compile-time optimizations.
-    status: in-development
-    statusText: In Implementation
-    availability: Not yet available.
-    resources:
-      - type: blogpost
-        name: EmberCamp Module Unification Update
-        url: https://madhatted.com/2017/7/12/embercamp-module-unification-update
-      - type: doc
-        name: Coordination doc with relevant issues
-        url: https://docs.google.com/document/d/1P9q9K1JNadJclhFG0flUyY2GwKuOzTbgtUbOzuh6JYs/edit#heading=h.45ec702vuy8p
-      - type: channel
-        name: \#st-module-unification
-        url: https://embercommunity.slack.com
-      - type: rfc
-        name: Module Unification
-        url: https://github.com/emberjs/rfcs/pull/143
-    champions:
-      - name: Matthew Beale
-        image: https://avatars0.githubusercontent.com/u/8752?v=4&s=460
-        url: https://github.com/mixonic
   # - name: 
   #   summary: |
   #     Summary
