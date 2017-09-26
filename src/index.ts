@@ -2,7 +2,7 @@ import App from './main';
 import { ComponentManager, setPropertyDidChange } from '@glimmer/component';
 
 const app = new App();
-const containerElement = document.getElementById('app');
+const containerElement = document.getElementById('content');
 
 setPropertyDidChange(() => {
   app.scheduleRerender();
