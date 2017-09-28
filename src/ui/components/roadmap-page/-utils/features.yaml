@@ -168,6 +168,9 @@ features:
       - name: Matthew Beale
         image: https://avatars0.githubusercontent.com/u/8752?v=4&s=460
         url: https://github.com/mixonic
+      - name: Dan Gebhardt
+        image: https://avatars3.githubusercontent.com/u/29122?v=4&s=460
+        url: https://github.com/dgeb
   - name: Ember/Glimmer.js Compatibility
     summary: |
       Seamlessly use components written using the [Glimmer.js](https://www.glimmerjs.com)
