@@ -37,7 +37,7 @@ features:
       so that you can easily migrate your project.
     status: shipped
     statusText: Shipped
-    availability: Available in Ember CLI Babel v6.6.0 and up
+    availability: Ember CLI Babel v6.6.0+
     resources:
       - type: rfc
         name: RFC 176

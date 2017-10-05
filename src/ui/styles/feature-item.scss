@@ -1,0 +1,33 @@
+.column-layout {
+  display: flex;
+
+  flex-direction: column;
+
+  @media (min-width: $screen-sm-min) {
+    flex-direction: row;
+  }
+}
+
+.column-layout__left {
+  padding-right: 1em;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-3 {
+  flex: 3;
+}
+
+.Feature-HeadContent {
+  @media (min-width: $screen-sm-min) {
+    flex-direction: row;
+  }
+}
+
+.Feature-Detail {
+  @media (min-width: $screen-sm-min) {
+    flex-direction: row;
+  }
+}

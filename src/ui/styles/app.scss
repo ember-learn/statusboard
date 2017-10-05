@@ -174,7 +174,6 @@ body.status {
 .Feature-Inner {
   margin: 0 auto;
   width: 100%;
-  // max-width: 50em;
 }
 
 .Feature-Head {
@@ -400,3 +399,5 @@ pre.hljs code {
   padding: 0;
   color: $black-color;
 }
+
+@import "feature-item";
