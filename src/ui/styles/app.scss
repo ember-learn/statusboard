@@ -3,8 +3,8 @@
 @import 'syntax';
 
 /* Status colours */
-$shipped-color: $green-color;
-$shipped-highlight-color: $light-green-color;
+$shipped-color: lighten($green-color, 5%);
+$shipped-highlight-color: darken($light-green-color, 5%);
 $in-development-color: $blue-color;
 $in-development-highlight-color: $light-blue-color;
 $under-consideration-color: $dirty-yellow-color;
@@ -174,7 +174,6 @@ body.status {
 .Feature-Inner {
   margin: 0 auto;
   width: 100%;
-  // max-width: 50em;
 }
 
 .Feature-Head {
@@ -244,22 +243,21 @@ body.status {
 }
 
 .Feature-Status {
-  margin: $whitespace 0;
-  font-weight: bold;
-  font-size: 1.2em;
-  line-height: 1.2em;
+  .status {
+    margin: $whitespace 0;
+    font-weight: bold;
+    line-height: 1.2em;
+  }
 
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  &:before {
+  .status:before {
     content: '';
-    border: 1px solid $black-color;
     border-radius: 50%;
     width: 1em;
     height: 1em;
     margin-right: 0.5em;
     display: inline-block;
+    margin-bottom: -0.1em;
+    box-shadow: rgba(0, 0, 0, 0.298039) 1px 3px 8px 0px;
   }
 }
 
@@ -302,32 +300,35 @@ body.status {
 .Feature-Detail {
   h3 {
     margin: 0 0 ($whitespace / 2);
-    font-size: 1.2em;
+    font-size: 1em;
     color: $brown-orange-color;
   }
 }
 
-.Feature-ResourcesList {
-  padding: 0;
-  list-style: none;
+.Feature-Availability {
+  margin: 0.5em 0;
+}
+
+.Feature-Resources {
+  ul {
+    padding: 0;
+    list-style: none;
+    margin: 0 !important;
+  }
 }
 
 .Feature-Champions {
-  padding: 0;
-  list-style: none;
-
-  @media screen and (min-width: $screen-sm-min) {
-    display: flex;
+  ul {
+    padding: 0;
+    margin: 0 !important;
+    list-style: none;
   }
 }
 
 .Feature-Champion {
-  margin-right: 20px;
+  margin-right: 10px;
   margin-bottom: ($whitespace / 2);
-
-  @media screen and (min-width: $screen-sm-min) {
-    display: block;
-  }
+  display: block;
 
   a {
     display: flex;
@@ -338,7 +339,7 @@ body.status {
   img {
     border-radius: 50%;
     margin-right: 7px;
-    width: 60px;
+    width: 30px;
   }
 }
 
@@ -400,3 +401,5 @@ pre.hljs code {
   padding: 0;
   color: $black-color;
 }
+
+@import "feature-item";
