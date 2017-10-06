@@ -3,13 +3,10 @@
     <div class="Feature-Inner">
         <div class="Feature-Head">
             <div class="Feature-Heading column-layout">
-              <div class="column-layout__left flex-3">
+              <div class="column-layout__left">
                 <h2>
                     <button id="{{feature.id}}" aria-controls="{{feature.descriptionId}}" aria-expanded="false" onclick={{action toggle}}>{{feature.name}}</button>
                 </h2>
-              </div>
-              <div class="flex-1">
-                <span class="Feature-Status status--{{feature.status}}">{{feature.statusText}}</span>
               </div>
             </div>
             <div class="Feature-HeadContent">
@@ -30,42 +27,52 @@
 
                 <div class="flex-1">
                   <div class="Feature-Detail">
+                    <div class="Feature-Status">
+                        <h3>Status</h3>
+                        <div class="status status--{{feature.status}}">
+                            {{feature.statusText}}
+                        </div>
+                    </div>
+
                     {{#if feature.availability}}
                         <div class="Feature-Availability">
                             <h3>Availability</h3>
                             <p>{{feature.availability}}</p>
                         </div>
                     {{/if}}
+                    {{#if isOpen}}
+                        {{#if feature.champions}}
+                            <div class="Feature-Champions">
+                                <h3>Core Team Champions</h3>
+                                <ul>
+                                    {{#each feature.champions key="@index" as |champion|}}
+                                        <li class="Feature-Champion">
+                                            <a href="{{champion.url}}">
+                                                <img src="{{champion.image}}">
+                                                <span>{{champion.name}}</span>
+                                            </a>
+                                        </li>
+                                    {{/each}}
+                                </ul>
+                            </div>
+                        {{/if}}
+                    
+                        {{#if feature.resources}}
+                            <div class="Feature-Resources">
+                                <h3>Resources</h3>
+                                <ul>
+                                    {{#each feature.resources key="@index" as |resource|}}
+                                        <li><span class="icon-{{resource.type}}"></span><a href="{{resource.url}}">{{resource.name}}</a></li>
+                                    {{/each}}
+                                </ul>
+                            </div>
+                        {{/if}}
+                    {{/if}}
                   </div>
                 </div>
             </div>
         </div>
         {{#if isOpen}}
-            <div class="Feature-Detail">
-                <div class="Feature-DetailContent">
-                    {{#if feature.resources}}
-                        <h3>Resources</h3>
-                        <ul class="Feature-ResourcesList">
-                        {{#each feature.resources key="@index" as |resource|}}
-                            <li><span class="icon-{{resource.type}}"></span><a href="{{resource.url}}">{{resource.name}}</a></li>
-                        {{/each}}
-                        </ul>
-                    {{/if}}
-                    {{#if feature.champions}}
-                        <h3>Core Team Champions</h3>
-                        <ul class="Feature-Champions">
-                        {{#each feature.champions key="@index" as |champion|}}
-                            <li class="Feature-Champion">
-                                <a href="{{champion.url}}">
-                                    <img src="{{champion.image}}">
-                                    <span>{{champion.name}}</span>
-                                </a>
-                            </li>
-                        {{/each}}
-                        </ul>
-                    {{/if}}
-                </div>
-            </div>
             <a href="" id="{{feature.id}}" aria-controls="{{feature.descriptionId}}" aria-expanded="false" onclick={{action toggle}}>
                 Show less
             </a>
