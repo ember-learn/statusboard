@@ -17,6 +17,6 @@ app.registerInitializer({
   }
 });
 
-app.renderComponent('roadmap-page', containerElement, null);
+app.renderComponent('Statusboard', containerElement, null);
 
 app.boot();
