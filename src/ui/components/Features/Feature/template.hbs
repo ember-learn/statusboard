@@ -11,9 +11,9 @@
             </div>
             <div class="Feature-HeadContent">
                 <div class="Feature-Description column-layout__left flex-3" id="{{feature.descriptionId}}" aria-labelledby="{{feature.id}}">
-                    <mark-down @text={{feature.summary}}></mark-down>
+                    <Markdown @text={{feature.summary}}></Markdown>
                     {{#if isOpen}}
-                        <mark-down @text={{feature.description}}></mark-down>
+                        <Markdown @text={{feature.description}}></Markdown>
                     {{else}}
                         <a href="" id="{{feature.id}}" aria-controls="{{feature.descriptionId}}" aria-expanded="false" onclick={{action toggle}}>
                             {{#if isOpen}}

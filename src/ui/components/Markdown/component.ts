@@ -16,7 +16,7 @@ const MarkdownIt = markdownit({
   }
 });
 
-export default class MarkDown extends Component {
+export default class Markdown extends Component {
   /**
    * Renders the Markdown text with syntax highlighting for code blocks.
    */

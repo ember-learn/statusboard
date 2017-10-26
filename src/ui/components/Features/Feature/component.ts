@@ -1,6 +1,6 @@
 import Component, { tracked } from '@glimmer/component';
 
-export default class FeatureItem extends Component {
+export default class Feature extends Component {
     @tracked isOpen = false;
 
     @tracked('args')
@@ -22,7 +22,7 @@ export default class FeatureItem extends Component {
         event.preventDefault();
         this.isOpen = !this.isOpen;
     }
-    
+
     // interaction with h2>button should toggle these:
     //aria-expanded on the h2>button
     //aria-hidden on the feature.description
