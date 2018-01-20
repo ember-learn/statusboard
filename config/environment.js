@@ -5,6 +5,12 @@ module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'roadmap-page',
     environment,
+    contentSecurityPolicy: {
+      'font-src': "'self' fonts.gstatic.com",
+      'img-src': "'self' emberjs.com glimmer-styleguide.global.ssl.fastly.net",
+      'style-src': "'self' fonts.googleapis.com emberjs.com glimmer-styleguide.global.ssl.fastly.net",
+      'script-src': "'self' cdnjs.cloudflare.com emberjs.com glimmer-styleguide.global.ssl.fastly.net"
+    },
     rootURL: '/',
     locationType: 'auto',
     EmberENV: {
