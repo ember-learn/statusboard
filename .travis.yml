@@ -1,8 +1,10 @@
+---
 language: node_js
 node_js:
-  - "8"
+  - "6"
+
+sudo: required
 dist: trusty
-sudo: false
 
 addons:
   chrome: stable
@@ -10,13 +12,16 @@ addons:
 cache:
   yarn: true
 
+before_install:
+  - curl -o- -L https://yarnpkg.com/install.sh | bash
+  - export PATH=$HOME/.yarn/bin:$PATH
+
 install:
-  - yarn install
+  - yarn install --non-interactive
 
 script:
-  - echo "We're waiting on glimmer to have tests, until then we'll keep deploying on pushes"
+  - yarn test
   - ./node_modules/.bin/ember deploy production --activate --verbose
-  # - yarn test
 
 deploy:
   provider: pages
