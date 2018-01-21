@@ -1,32 +1,13 @@
+/* eslint-env node */
 'use strict';
 
-const GlimmerApp = require('@glimmer/application-pipeline').GlimmerApp;
-const jsonModules = require('broccoli-json-module');
-const Funnel = require('broccoli-funnel');
-const Rollup = require('broccoli-rollup');
-const merge = require('broccoli-merge-trees');
-const resolve = require('rollup-plugin-node-resolve');
-const commonjs = require('rollup-plugin-commonjs');
-const json = require('rollup-plugin-json');
-const yaml2json = require('broccoli-yaml');
+const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
 
-  let src = jsonModules(yaml2json('src'));
-
-  let app = new GlimmerApp(defaults, {
+  let app = new EmberApp(defaults, {
     fingerprint: {
       prepend: 'https://ember-learn.github.io/statusboard/'
-    },
-    trees: {
-      src
-    },
-    rollup: {
-      plugins: [
-        resolve({ jsnext: true, module: true, main: true, preferBuiltins: false }),
-        json({ preferConst: true }),
-        commonjs()
-      ]
     }
   });
 
@@ -42,5 +23,12 @@ module.exports = function(defaults) {
   // modules that you would like to import into your application
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
+
+  app.import('node_modules/markdown-it/dist/markdown-it.js', {
+    using: [
+      { transformation: 'amd', as: 'markdown-it' }
+    ]
+  });
+
   return app.toTree();
 };
