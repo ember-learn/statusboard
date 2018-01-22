@@ -1,4 +1,5 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
+import Component from '@ember/component';
 import markdownit from 'markdown-it';
 import hljs from './-utils/highlight';
 
@@ -16,8 +17,8 @@ const MarkdownIt = markdownit({
   }
 });
 
-export default Ember.Component.extend({
-  renderedText: Ember.computed('text', function(){
+export default Component.extend({
+  renderedText: computed('text', function(){
     return MarkdownIt.render(this.get('text'));
   })
 });
