@@ -1,6 +1,6 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import DATA from './-utils/features';
 
-export default Ember.Component.extend({
+export default Component.extend({
   features: DATA.features
 });
