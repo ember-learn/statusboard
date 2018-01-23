@@ -10,7 +10,7 @@ module.exports = function(environment) {
       'style-src': "'self' fonts.googleapis.com emberjs.com glimmer-styleguide.global.ssl.fastly.net",
       'script-src': "'self' cdnjs.cloudflare.com emberjs.com glimmer-styleguide.global.ssl.fastly.net"
     },
-    rootURL: '/',
+    rootURL: '/statusboard',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
