@@ -6,7 +6,7 @@ module.exports = function(defaults) {
 
   let app = new EmberApp(defaults, {
     fingerprint: {
-      prepend: 'https://ember-learn.github.io/statusboard/'
+      prepend: 'https://ember-learn.github.io/'
     }
   });
 
