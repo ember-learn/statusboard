@@ -16,18 +16,22 @@ You will need the following things properly installed on your computer.
 ## Installation
 
 * `git clone <repository-url>` this repository
-* `cd roadmap-page`
+* `cd statusboard`
 * `yarn`
 
 ## Running / Development
 
 * `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+* Visit your app at [http://localhost:4200/statusboard/](http://localhost:4200/statusboard/).
 
 ### Building
 
 * `ember build` (development)
 * `ember build --environment production` (production)
+
+## Troubleshooting
+Do you see a `Cannot GET /` error? Try viewing the app at 
+[http://localhost:4200/statusboard/](http://localhost:4200/statusboard/) instead of the index.
 
 ## Further Reading / Useful Links
 
