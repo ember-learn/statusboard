@@ -273,8 +273,8 @@ features:
       Once the extension point exists and we can experiment with different
       approaches, the next step will be to evaluate when and how this might
       become part of the default out-of-the-box Ember experience.
-    status: in-development
-    statusText: In Implementation
+    status: under-consideration
+    statusText: 'RFC Submitted'
     availability: Not yet available.
     resources:
       - type: rfc
