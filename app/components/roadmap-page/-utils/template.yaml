@@ -1,0 +1,16 @@
+# - name:
+#   summary: |
+#     Summary
+#   description: |
+#     Description
+#   status:
+#   statusText:
+#   availability:
+#   resources:
+#     - type:
+#       name:
+#       url:
+#   champions:
+#     - name:
+#       image:
+#       url:
