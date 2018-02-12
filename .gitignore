@@ -1,5 +1,8 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
+# Auto-generated file
+app/components/roadmap-page/-utils/features.js
+
 # compiled output
 /dist
 /tmp
@@ -16,6 +19,7 @@
 npm-debug.log*
 yarn-error.log
 testem.log
+jsconfig.json
 
 # ember-try
 .node_modules.ember-try/
