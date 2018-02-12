@@ -3,7 +3,7 @@
 const EmberApp = require("ember-cli/lib/broccoli/ember-app");
 const glob = require("glob");
 const path = require("path");
-const camelCase = require("camelCase");
+const camelCase = require("camelcase");
 const fs = require("fs");
 
 module.exports = function(defaults) {
