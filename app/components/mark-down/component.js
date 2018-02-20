@@ -19,6 +19,6 @@ const MarkdownIt = markdownit({
 
 export default Component.extend({
   renderedText: computed('text', function(){
-    return MarkdownIt.render(this.get('text'));
+    return MarkdownIt.render(this.text);
   })
 });
