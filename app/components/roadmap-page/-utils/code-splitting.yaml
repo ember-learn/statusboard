@@ -57,6 +57,9 @@
     - type: rfc
       name: Packaging Strategies RFC
       url: https://github.com/ember-cli/rfcs/pull/110
+    - type: quest
+      name: Quest Issue
+      url: https://github.com/ember-cli/ember-cli/issues/4211
   champions:
     - name: Robert Jackson
       image: https://avatars2.githubusercontent.com/u/12637?v=4&s=460
