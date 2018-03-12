@@ -34,6 +34,9 @@
     - type: rfc
       name: Custom Components RFC
       url: https://github.com/emberjs/rfcs/blob/custom-components/text/0000-custom-components.md
+    - type: quest
+      name: Quest Issue
+      url: https://github.com/emberjs/ember.js/issues/16301
   champions:
     - name: Kris Selden
       image: https://avatars2.githubusercontent.com/u/61024?v=4&s=460
