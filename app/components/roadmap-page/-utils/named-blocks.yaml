@@ -48,7 +48,7 @@
   resources:
     - type: rfc
       name: Named Blocks RFC
-      url: https://github.com/ember-cli/rfcs/pull/226
+      url: https://github.com/emberjs/rfcs/pull/226
   champions:
     - name: Martin Muñoz
       image: https://avatars0.githubusercontent.com/u/1151810?s=460&v=4
