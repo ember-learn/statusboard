@@ -34,9 +34,9 @@
     - type: rfc
       name: Module Unification RFC
       url: https://github.com/emberjs/rfcs/pull/143
-      #- type: quest
-      #- name: Quest Issue
-      #- url: https://github.com/emberjs/ember.js/issues/14882
+      - type: quest
+      - name: Quest Issue
+      - url: https://github.com/emberjs/ember.js/issues/16373
   champions:
     - name: Matthew Beale
       image: https://avatars0.githubusercontent.com/u/8752?v=4&s=460
