@@ -2,7 +2,7 @@
 
 [![Build Status](https://www.travis-ci.org/ember-learn/statusboard.svg?branch=master)](https://www.travis-ci.org/ember-learn/statusboard)
 
-This application was built with the purpose to display the currently on-going initiatives in the Ember.js project.
+This application was built with the purpose to display the currently on-going initiatives in the Ember.js project. Our hope is to build this to work akin to [Microsoft's Edge status board](https://developer.microsoft.com/en-us/microsoft-edge/platform/status/)
 
 ## Prerequisites
 
