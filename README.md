@@ -4,6 +4,8 @@
 
 This application was built with the purpose to display the currently on-going initiatives in the Ember.js project. Our hope is to build this to work akin to [Microsoft's Edge status board](https://developer.microsoft.com/en-us/microsoft-edge/platform/status/)
 
+Feature data is located [here](https://github.com/ember-learn/statusboard/tree/master/app/components/roadmap-page/-utils)
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
