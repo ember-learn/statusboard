@@ -13,7 +13,17 @@
         <div class="Feature-Description column-layout__left flex-3" id="{{@feature.descriptionId}}" aria-labelledby="{{@feature.id}}">
           {{mark-down text=@feature.summary}}
           {{#if isOpen}}
+            {{#if @feature.updates}}
+              {{#each @feature.updates as |update|}}
+                <div class="Feature-Update">
+                  <div class="Feature-Update-Header">{{update.date}}</div>
+                  <p>{{mark-down text=update.text}}</p>
+                </div>
+              {{/each}}
+            {{/if}}
+
             {{mark-down text=@feature.description}}
+
           {{else}}
             <a href="" id="{{@feature.id}}" aria-controls="{{@feature.descriptionId}}" aria-expanded="false" {{action 'toggle'}}>
               {{#if isOpen}}

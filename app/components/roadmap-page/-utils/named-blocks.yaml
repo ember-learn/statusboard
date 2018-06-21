@@ -42,10 +42,20 @@
       </@main>
     {{/x-modal}}
     ```
-  status: in-development
-  statusText: In Implementation
+  updates:
+    - date: June 2018
+      text: |
+        [As mentioned in this comment on the RFC](https://github.com/emberjs/rfcs/pull/226#issuecomment-397419787),
+        named blocks implementation currently needs more design work to work well with angle-bracket components.
+
+        There are apparently some other vague concerns as well.
+  status: under-consideration
+  statusText: More design work needed
   availability: Not yet available.
   resources:
+    - type: rfc
+      name: Latest Update (June 2018)
+      url: https://github.com/emberjs/rfcs/pull/226#issuecomment-397419787
     - type: rfc
       name: Named Blocks RFC
       url: https://github.com/emberjs/rfcs/pull/226

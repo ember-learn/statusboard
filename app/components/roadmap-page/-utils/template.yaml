@@ -3,6 +3,10 @@
 #     Summary
 #   description: |
 #     Description
+#   updates:
+#     - date:
+#       text: |
+#         Update text
 #   status:
 #   statusText:
 #   availability:

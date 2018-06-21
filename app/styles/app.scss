@@ -287,6 +287,20 @@ body.status {
   }
 }
 
+.Feature-Update {
+  font-size: 95%;
+
+  padding: 1rem 1rem .5rem 1rem;
+  background: #fdf7ee;
+  margin: 1rem 2rem 1rem 1rem;
+}
+.Feature-Update-Header {
+  font-weight: bold;
+}
+.Feature-Update p {
+  font-style: italic;
+}
+
 .Feature-Description {
   // margin: $whitespace 0;
 }
