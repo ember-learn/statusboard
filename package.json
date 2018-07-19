@@ -45,7 +45,7 @@
     "eslint-plugin-disable-features": "^0.1.3",
     "eslint-plugin-ember": "^5.2.0",
     "loader.js": "^4.7.0",
-    "markdown-it": "^8.4.1",
+    "markdown-it": "^8.4.2",
     "qunit-dom": "0.7.1"
   },
   "engines": {
