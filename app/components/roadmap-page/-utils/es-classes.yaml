@@ -28,13 +28,9 @@
     like these will be the basis for a set of decorators in Ember, similar to how
     [ember-native-dom-helpers paved the way for modern testing helpers](https://github.com/emberjs/rfcs/blob/master/text/0268-acceptance-testing-refactor.md#dom-interaction-helpers).
 
-    The [first PR to update CoreObject](https://github.com/emberjs/ember.js/pull/15594)
-    landed recently, and there is a [work in progress PR](https://github.com/emberjs/ember.js/pull/16184)
-    to fix extending back-and-forth between native classes and legacy classes. A [quest
-    issue](https://github.com/emberjs/ember.js/issues/16134) was also opened recently
-    to guage usage of certain features in services to determine what was needed to
-    support them. Once these issues have been addressed, we can continue to fix
-    other broken features.
+    A [quest
+    issue](https://github.com/emberjs/ember.js/issues/16927) is actively used
+    by the strike team `#st-native-classes` to keep track of all of the major tasks left.
   status: in-development
   statusText: In Implementation
   availability: Not yet available.
@@ -42,12 +38,15 @@
     - type: rfc
       name: ES Class RFC
       url: https://github.com/emberjs/rfcs/blob/master/text/0240-es-classes.md
-    - type: blogpost
-      name: Class Usage Today
-      url: https://medium.com/build-addepar/es-classes-in-ember-js-63e948e9d78e
+    - type: addons
+      name: Native classes in Ember
+      url: http://ember-decorators.github.io/ember-decorators/latest/docs
     - type: quest
-      name: "Quest Issue"
-      url: https://github.com/emberjs/ember.js/issues/16134
+      name: Quest Issue
+      url: https://github.com/emberjs/ember.js/issues/16927
+    - type: codemod
+      name: Codemod
+      url: https://github.com/scalvert/ember-es6-class-codemod/
   champions:
     - name: Robert Jackson
       image: https://avatars2.githubusercontent.com/u/12637?v=4&s=460
