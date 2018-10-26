@@ -1,7 +1,7 @@
 import { computed } from '@ember/object';
 import Component from '@ember/component';
 import markdownit from 'markdown-it';
-import hljs from './-utils/highlight';
+import hljs from 'highlightjs';
 
 const MarkdownIt = markdownit({
   highlight(str, lang) {
