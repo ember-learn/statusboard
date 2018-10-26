@@ -39,6 +39,9 @@ module.exports = function(defaults) {
     featureModule
   );
 
+  app.import("node_modules/highlightjs/highlight.pack.js");
+  app.import('vendor/shims/highlightjs.js');
+
   app.import("node_modules/markdown-it/dist/markdown-it.js", {
     using: [{ transformation: "amd", as: "markdown-it" }]
   });
