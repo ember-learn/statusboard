@@ -16,7 +16,7 @@
 
     The first steps toward this integration are:
 
-    1. Iterate and merge the [Custom Components RFC](https://github.com/emberjs/rfcs/blob/custom-components/text/0000-custom-components.md),
+    1. Iterate and merge the [Custom Components RFC](https://github.com/emberjs/rfcs/blob/master/text/0213-custom-components.md),
        which describes a public API for registering custom Glimmer component managers.
     2. Update the Ember.js build pipeline to support TypeScript. Glimmer itself is exhaustively
        typed, but today Ember's rendering code (on top of Glimmer VM) is untyped JavaScript, which
@@ -33,10 +33,13 @@
   resources:
     - type: rfc
       name: Custom Components RFC
-      url: https://github.com/emberjs/rfcs/blob/custom-components/text/0000-custom-components.md
+      url: https://github.com/emberjs/rfcs/blob/master/text/0213-custom-components.md
     - type: quest
       name: Quest Issue
       url: https://github.com/emberjs/ember.js/issues/16301
+    - type: discord
+      name: "#st-glimmer-components"
+      url: https://discordapp.com/channels/480462759797063690/484527412160364574
   champions:
     - name: Kris Selden
       image: https://avatars2.githubusercontent.com/u/61024?v=4&s=460
