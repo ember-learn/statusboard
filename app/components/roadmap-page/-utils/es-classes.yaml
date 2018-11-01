@@ -31,13 +31,16 @@
     A [quest
     issue](https://github.com/emberjs/ember.js/issues/16927) is actively used
     by the strike team `#st-native-classes` to keep track of all of the major tasks left.
-  status: in-development
-  statusText: In Implementation
-  availability: Not yet available.
+  status: shipped
+  statusText: Shipped
+  availability: Available in Ember 3.6 and up, polyfill for older versions
   resources:
     - type: rfc
       name: ES Class RFC
       url: https://github.com/emberjs/rfcs/blob/master/text/0240-es-classes.md
+    - type: rfc
+      name: Native Class Constructor Update RFC
+      url: https://github.com/emberjs/rfcs/blob/master/text/0337-native-class-constructor-update.md
     - type: addons
       name: Native classes in Ember
       url: http://ember-decorators.github.io/ember-decorators/latest/docs
@@ -47,6 +50,9 @@
     - type: codemod
       name: Codemod
       url: https://github.com/scalvert/ember-es6-class-codemod/
+    - type: polyfill
+      name: Polyfill
+      url: https://github.com/pzuraq/ember-native-class-polyfill
   champions:
     - name: Robert Jackson
       image: https://avatars2.githubusercontent.com/u/12637?v=4&s=460
