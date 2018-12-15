@@ -4,7 +4,7 @@
     with each having a separate container to avoid naming collisions between teams of developers.
   description: |
     Engines is mostly production ready, and is used by major companies such as Chase and LinkedIn.
-    However, they are still conidered experimental due to some build time concerns such as lazyLoading
+    However, they are still considered experimental due to some build time concerns such as lazyLoading
     being controlled by the engine rather than the host and tests not being located in the engine.
     Part of the latter issue may be fixed with the release and incorporation of module unification.
     For more information, see this great
