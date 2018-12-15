@@ -12,32 +12,23 @@
     more. Ember has always been about shared solutions, and transitioning to the
     modern native class syntax is no exception!
 
-    As it turns out, the existing object model is already highly cross-compatible
-    with the new class syntax. The [ES Class
-    RFC](https://github.com/emberjs/rfcs/blob/master/text/0240-es-classes.md)
-    outlined a path forward that required few changes to the existing object model,
-    mostly around fixing broken features such as observers and event listeners,
-    and allowing "zebra-striping" - being able to go back and forth between native
-    classes and EmberObject based classes using the old style.
-
-    The RFC also touched on decorators, but didn't specify any to be added to Ember
-    directly yet. Instead, it encouraged continued exploration by addons such as
-    the long running [ember-decorators](https://github.com/ember-decorators)
-    project, which has been experimenting with decorators since they were first
-    proposed and is continuing to evolve their syntax and usage. Over time addons
-    like these will be the basis for a set of decorators in Ember, similar to how
-    [ember-native-dom-helpers paved the way for modern testing helpers](https://github.com/emberjs/rfcs/blob/master/text/0268-acceptance-testing-refactor.md#dom-interaction-helpers).
-
-    A [quest
-    issue](https://github.com/emberjs/ember.js/issues/16927) is actively used
-    by the strike team `#st-native-classes` to keep track of all of the major tasks left.
-  status: in-development
-  statusText: In Implementation
-  availability: Not yet available.
+    As of Ember 3.6, native classes have stabilized and are considered part of
+    Ember's public API. However, because decorators and class fields are still
+    going through the TC39 process, they are only recommended for early adopters
+    who are willing to take on the risk of these experimental features. Without
+    class fields or decorators, class syntax is cumbersome and difficult to use.
+    
+    For more details, see [the release blog post for Ember 3.6.](https://emberjs.com/blog/2018/12/13/ember-3-6-released.html)
+  status: shipped
+  statusText: Shipped
+  availability: Available in Ember 3.6 and up, polyfill for older versions
   resources:
     - type: rfc
       name: ES Class RFC
       url: https://github.com/emberjs/rfcs/blob/master/text/0240-es-classes.md
+    - type: rfc
+      name: Native Class Constructor Update RFC
+      url: https://github.com/emberjs/rfcs/blob/master/text/0337-native-class-constructor-update.md
     - type: addons
       name: Native classes in Ember
       url: http://ember-decorators.github.io/ember-decorators/latest/docs
@@ -47,6 +38,9 @@
     - type: codemod
       name: Codemod
       url: https://github.com/scalvert/ember-es6-class-codemod/
+    - type: polyfill
+      name: Polyfill
+      url: https://github.com/pzuraq/ember-native-class-polyfill
   champions:
     - name: Robert Jackson
       image: https://avatars2.githubusercontent.com/u/12637?v=4&s=460
