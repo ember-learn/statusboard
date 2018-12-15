@@ -6,9 +6,9 @@ module.exports = function(environment) {
     environment,
     contentSecurityPolicy: {
       'font-src': "'self' fonts.gstatic.com",
-      'img-src': "'self' emberjs.com *.githubusercontent.com glimmer-styleguide.global.ssl.fastly.net",
-      'style-src': "'self' fonts.googleapis.com emberjs.com glimmer-styleguide.global.ssl.fastly.net",
-      'script-src': "'self' cdnjs.cloudflare.com emberjs.com glimmer-styleguide.global.ssl.fastly.net"
+      'img-src': "'self' emberjs.com *.githubusercontent.com",
+      'style-src': "'self' fonts.googleapis.com emberjs.com",
+      'script-src': "'self' cdnjs.cloudflare.com emberjs.com"
     },
     rootURL: '/statusboard',
     locationType: 'auto',
