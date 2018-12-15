@@ -11,6 +11,6 @@ module("Integration | Component | roadmap page/statusboard header", function(
   test("it renders", async function(assert) {
     await render(hbs`{{roadmap-page/statusboard-header}}`);
 
-    assert.dom("div").exists();
+    assert.dom("img").exists();
   });
 });

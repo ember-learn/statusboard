@@ -1,7 +1,8 @@
-import { computed } from '@ember/object';
 import Component from '@ember/component';
-import markdownit from 'markdown-it';
+import { computed } from '@ember/object';
+import { htmlSafe } from '@ember/template';
 import hljs from 'highlightjs';
+import markdownit from 'markdown-it';
 
 const MarkdownIt = markdownit({
   highlight(str, lang) {
@@ -18,7 +19,7 @@ const MarkdownIt = markdownit({
 });
 
 export default Component.extend({
-  renderedText: computed('text', function(){
-    return MarkdownIt.render(this.text);
+  renderedText: computed('text', function() {
+    return htmlSafe(MarkdownIt.render(this.text));
   })
 });

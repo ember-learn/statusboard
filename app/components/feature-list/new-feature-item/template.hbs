@@ -5,17 +5,34 @@
       <div class="Feature-Heading column-layout">
         <div class="column-layout__left">
           <h2>
-            <button id="{{@feature.id}}" aria-controls="{{@feature.descriptionId}}" aria-expanded="false" {{action 'toggle'}}>{{@feature.name}}</button>
+            <button
+              id={{@feature.id}}
+              aria-controls={{@feature.descriptionId}}
+              aria-expanded="false"
+              {{action "toggle"}}
+            >
+              {{@feature.name}}
+            </button>
           </h2>
         </div>
       </div>
       <div class="Feature-HeadContent">
-        <div class="Feature-Description column-layout__left flex-3" id="{{@feature.descriptionId}}" aria-labelledby="{{@feature.id}}">
+        <div
+          class="Feature-Description column-layout__left flex-3"
+          id={{@feature.descriptionId}}
+          aria-labelledby={{@feature.id}}
+        >
           {{mark-down text=@feature.summary}}
           {{#if isOpen}}
             {{mark-down text=@feature.description}}
           {{else}}
-            <a href="" id="{{@feature.id}}" aria-controls="{{@feature.descriptionId}}" aria-expanded="false" {{action 'toggle'}}>
+            <a
+              href=""
+              id={{@feature.id}}
+              aria-controls={{@feature.descriptionId}}
+              aria-expanded="false"
+              {{action "toggle"}}
+            >
               {{#if isOpen}}
                 Show less
               {{else}}
@@ -47,8 +64,8 @@
                   <ul>
                     {{#each @feature.champions as |champion|}}
                       <li class="Feature-Champion">
-                        <a href="{{champion.url}}">
-                          <img src="{{champion.image}}">
+                        <a href={{champion.url}}>
+                          <img src={{champion.image}} alt="Feature champion">
                           <span>{{champion.name}}</span>
                         </a>
                       </li>
@@ -62,7 +79,7 @@
                   <h3>Resources</h3>
                   <ul>
                     {{#each @feature.resources as |resource|}}
-                      <li><span class="icon-{{resource.type}}"></span><a href="{{resource.url}}">{{resource.name}}</a></li>
+                      <li><span class="icon-{{resource.type}}"></span><a href={{resource.url}}>{{resource.name}}</a></li>
                     {{/each}}
                   </ul>
                 </div>
@@ -73,7 +90,13 @@
       </div>
     </div>
     {{#if isOpen}}
-      <a href="" id="{{@feature.id}}" aria-controls="{{@feature.descriptionId}}" aria-expanded="false" {{action 'toggle'}}>
+      <a
+        href=""
+        id={{@feature.id}}
+        aria-controls={{@feature.descriptionId}}
+        aria-expanded="false"
+        {{action "toggle"}}
+      >
         Show less
       </a>
     {{/if}}
