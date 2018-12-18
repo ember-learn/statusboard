@@ -1,5 +1,9 @@
 <span>
-  {{roadmap-page/statusboard-header}}
+  {{statusboard-header}}
 
-  {{feature-list features=features}}
+  <div class="Features">
+    {{#each features as |feature|}}
+      {{feature-item feature=feature}}
+    {{/each}}
+  </div>
 </span>
