@@ -1,7 +1,6 @@
-@import 'colors';
-@import 'layout';
+@import "colors";
+@import "layout";
 @import 'syntax';
-@import 'footer';
 
 /* Status colours */
 $shipped-color: lighten($green-color, 5%);
@@ -62,123 +61,9 @@ body.status {
   }
 }
 
-// body {
-//   background-color: $white-color;
-//   font-family: $font-family;
-//   font-size: $body-scale;
-//   line-height: $body-line-height;
-//   color: $black-color;
-//   -webkit-font-smoothing: antialiased;
-//   padding: 0;
-//   margin: 0;
-// }
-
-// // a {
-// //   color: $dull-red-color;
-// //   transition: color 0.1s linear;
-// //   text-decoration: none;
-// // }
-
-// // a:active {
-// //   outline: none;
-// // }
-
-// // a:active,
-// // a:focus,
-// // a:hover {
-// //   color: $red-color;
-// //   text-decoration: underline;
-// //   cursor: pointer;
-// // }
-
-// // h1,
-// // h2,
-// // h3,
-// // h4,
-// // h5,
-// // h6 {
-// //   font-family: $font-family;
-// //   line-height: 1;
-// //   margin: $whitespace 0;
-// //   font-weight: bold;
-// // }
-
-// // h1 {
-// //   color: $orange-color;
-// //   font-size: $h1-scale;
-// //   line-height: $h1-line-height;
-// // }
-
-// // h2 {
-// //   color: $brown-color;
-// //   font-size: $h2-scale;
-// //   line-height: $h2-line-height;
-// // }
-
-// // h3 {
-// //   margin: 0 0 1em;
-// //   font-size: $h3-scale;
-// //   line-height: $h3-line-height;
-// // }
-
-// // ul,
-// // p {
-// //   font-size: 1em;
-// //   margin: ($whitespace / 2) 0;
-// // }
-
-// .Roadmap-Intro {
-//   margin: ($whitespace*2) auto;
-//   padding: 0 ($whitespace*2);
-//   max-width: $screen-sm-min;
-
-//   p {
-//     font-size: $h3-scale;
-//     line-height: $h3-line-height;
-//   }
-
-//   @media screen and (max-width: $screen-sm-min) {
-//     margin: $whitespace auto;
-//     padding: 0 $whitespace;
-
-//     p {
-//       font-size: $body-scale;
-//       line-height: $body-line-height;
-//     }
-//   }
-
-// }
-
-// .Features {
-//   background: $lightest-of-yellows-color;
-//   background-image: linear-gradient(90deg,
-//     rgba($lightest-of-yellows-color, 0) 0%,
-//     rgba($lightest-of-yellows-color, 1) 2.5%,
-//     rgba($lightest-of-yellows-color, 1) 97.5%,
-//     rgba($lightest-of-yellows-color, 0) 100%
-//   );
-
-//   border-top: 1px solid $second-lightest-of-yellows-color;
-//   border-image: linear-gradient(90deg,
-//     rgba($second-lightest-of-yellows-color, 0) 0%,
-//     rgba($second-lightest-of-yellows-color, 1) 2.5%,
-//     rgba($second-lightest-of-yellows-color, 1) 97.5%,
-//     rgba($second-lightest-of-yellows-color, 0) 100%
-//   ) 1 100%;
-
-//   @media screen and (max-width: 767px) {
-//   }
-//   @media screen and (min-width: 768px) {
-//   }
-// }
-
 .Feature-Inner {
   margin: 0 auto;
   width: 100%;
-}
-
-.Feature-Head {
-  // margin-bottom: $whitespace;
 }
 
 .Feature-Icon {

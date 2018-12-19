@@ -17,7 +17,7 @@
     going through the TC39 process, they are only recommended for early adopters
     who are willing to take on the risk of these experimental features. Without
     class fields or decorators, class syntax is cumbersome and difficult to use.
-    
+
     For more details, see [the release blog post for Ember 3.6.](https://emberjs.com/blog/2018/12/13/ember-3-6-released.html)
   status: shipped
   statusText: Shipped
