@@ -6,6 +6,8 @@ This application was built with the purpose to display the currently on-going in
 
 Feature data is located [here](https://github.com/ember-learn/statusboard/tree/master/app/components/roadmap-page/-utils)
 
+**NOTE** This application has been merged into https://github.com/ember-learn/ember-website.
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
